@@ -93,7 +93,7 @@ interface RoleContextType {
 const RoleContext = createContext<RoleContextType | undefined>(undefined);
 
 export const RoleProvider = ({ children }: { children: ReactNode }) => {
-  const [currentRole, setCurrentRole] = useState<UserRole>('devops');
+  const [currentRole, setCurrentRole] = useState<UserRole>('admin');
 
   const allRoles: { value: UserRole; label: string }[] = [
     { value: 'admin', label: 'Администратор' },
