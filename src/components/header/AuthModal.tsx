@@ -87,33 +87,31 @@ const AuthModal = ({ isOpen, onOpenChange }: AuthModalProps) => {
       <DialogContent className="sm:max-w-[400px] p-0 gap-0 border-border/50 overflow-hidden">
         <div className="p-6 pb-4">
           {/* Logo & Title */}
-          <div className="flex flex-col items-center mb-6">
-            {mode !== 'forgot' && (
-              <>
-                <div className="flex items-center gap-0.5 mb-3">
-                  <img src={ploozaLogo} alt="Plooza" className="h-6 w-auto" />
-                  <span className="text-xl font-bold text-foreground">.ID</span>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button type="button" className="text-muted-foreground hover:text-foreground transition-colors ml-1">
-                        <HelpCircle className="w-4 h-4" />
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom" className="max-w-[240px] text-center">
-                      <p className="text-xs">
-                        <span className="font-medium">Plooza.ID</span> — единый аккаунт для всех сервисов платформы: управление серверами, биллинг, поддержка и многое другое.
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </div>
-                <div className="w-12 h-px bg-border mb-3" />
-              </>
-            )}
-            <h2 className="text-2xl font-semibold text-foreground">
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="flex items-center gap-0.5">
+              <img src={ploozaLogo} alt="Plooza" className="h-5 w-auto" />
+              <span className="text-lg font-bold text-foreground">.ID</span>
+            </div>
+            <span className="text-muted-foreground/50 text-xl font-light">/</span>
+            <h2 className="text-lg font-medium text-foreground">
               {mode === 'login' && 'Вход'}
               {mode === 'register' && 'Регистрация'}
-              {mode === 'forgot' && 'Восстановление доступа'}
+              {mode === 'forgot' && 'Восстановление'}
             </h2>
+            {mode !== 'forgot' && (
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button type="button" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <HelpCircle className="w-4 h-4" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="max-w-[240px] text-center">
+                  <p className="text-xs">
+                    <span className="font-medium">Plooza.ID</span> — единый аккаунт для всех сервисов платформы: управление серверами, биллинг, поддержка и многое другое.
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            )}
           </div>
 
           {/* Form */}
