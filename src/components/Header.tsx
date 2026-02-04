@@ -157,27 +157,45 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
     {
       id: 'hosting',
       label: 'Хостинг',
-      items: ['Виртуальный хостинг', 'WordPress хостинг', 'DNS-хостинг'],
+      items: [
+        { title: 'Виртуальный хостинг', href: '/hosting' },
+        { title: 'WordPress хостинг', href: '/hosting' },
+        { title: 'DNS-хостинг', href: '/dns' },
+      ],
     },
     {
       id: 'vps',
       label: 'VPS серверы',
-      items: ['VPS на SSD', 'VPS на NVMe', 'High-CPU VPS'],
+      items: [
+        { title: 'VPS на SSD', href: '/vds' },
+        { title: 'VPS на NVMe', href: '/vds' },
+        { title: 'High-CPU VPS', href: '/vds' },
+      ],
     },
     {
       id: 'domains',
       label: 'Домены',
-      items: ['Регистрация', 'Трансфер'],
+      items: [
+        { title: 'Регистрация', href: '/domains' },
+        { title: 'Трансфер', href: '/domains' },
+      ],
     },
     {
       id: 'ssl',
       label: 'SSL-сертификаты',
-      items: ['Бесплатный SSL', 'Коммерческий SSL'],
+      items: [
+        { title: 'Бесплатный SSL', href: '/ssl' },
+        { title: 'Коммерческий SSL', href: '/ssl' },
+      ],
     },
     {
       id: 'services',
       label: 'Сервисы',
-      items: ['Выделенные серверы', 'Защита от DDoS', 'Бэкап'],
+      items: [
+        { title: 'Выделенные серверы', href: '/dedicated' },
+        { title: 'Колокация', href: '/colocation' },
+        { title: 'Облачные сервисы', href: '/cloud' },
+      ],
     },
   ];
 
@@ -207,14 +225,14 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
             {expandedCategory === category.id && (
               <div className="ml-4 space-y-1">
                 {category.items.map((item) => (
-                  <a
-                    key={item}
-                    href="#"
+                  <Link
+                    key={item.title}
+                    to={item.href}
                     className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
                     onClick={onClose}
                   >
-                    {item}
-                  </a>
+                    {item.title}
+                  </Link>
                 ))}
               </div>
             )}
