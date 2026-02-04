@@ -83,7 +83,7 @@ const Categories = () => {
       gradient: 'from-rose-500 to-rose-600',
       iconBg: 'bg-rose-50',
       iconColor: 'text-rose-600',
-      href: '/dedicated',
+      href: '/gpu',
     },
   ];
 

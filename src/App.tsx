@@ -36,6 +36,7 @@ import FreelanceSpecialistsPage from "./pages/FreelanceSpecialistsPage";
 import FreelanceCreateResumePage from "./pages/FreelanceCreateResumePage";
 import FreelanceVacancyPage from "./pages/FreelanceVacancyPage";
 import FreelanceResumePage from "./pages/FreelanceResumePage";
+import GPUPage from "./pages/GPUPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -70,6 +71,7 @@ const App = () => (
               <Route path="/ssl" element={<SSLPage />} />
               <Route path="/cloud" element={<CloudPage />} />
               <Route path="/dedicated" element={<DedicatedPage />} />
+              <Route path="/gpu" element={<GPUPage />} />
               <Route path="/colocation" element={<ColocationPage />} />
               <Route path="/providers" element={<ProvidersRatingPage />} />
               <Route path="/for-providers" element={<ForProvidersPage />} />
