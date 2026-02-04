@@ -37,6 +37,7 @@ import FreelanceCreateResumePage from "./pages/FreelanceCreateResumePage";
 import FreelanceVacancyPage from "./pages/FreelanceVacancyPage";
 import FreelanceResumePage from "./pages/FreelanceResumePage";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Provider Panel
 import ProviderLayout from "./components/provider/ProviderLayout";
@@ -59,6 +60,7 @@ const App = () => (
           <Toaster />
           <Sonner position="top-right" />
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/vds" element={<VDSPage />} />
