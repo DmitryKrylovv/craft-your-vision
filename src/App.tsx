@@ -13,6 +13,7 @@ import DomainsPage from "./pages/DomainsPage";
 import DNSPage from "./pages/DNSPage";
 import SSLPage from "./pages/SSLPage";
 import CloudPage from "./pages/CloudPage";
+import DedicatedPage from "./pages/DedicatedPage";
 import ColocationPage from "./pages/ColocationPage";
 import ProvidersRatingPage from "./pages/ProvidersRatingPage";
 import ForProvidersPage from "./pages/ForProvidersPage";
@@ -66,6 +67,7 @@ const App = () => (
               <Route path="/dns" element={<DNSPage />} />
               <Route path="/ssl" element={<SSLPage />} />
               <Route path="/cloud" element={<CloudPage />} />
+              <Route path="/dedicated" element={<DedicatedPage />} />
               <Route path="/colocation" element={<ColocationPage />} />
               <Route path="/providers" element={<ProvidersRatingPage />} />
               <Route path="/for-providers" element={<ForProvidersPage />} />
