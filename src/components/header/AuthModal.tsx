@@ -87,24 +87,22 @@ const AuthModal = ({ isOpen, onOpenChange }: AuthModalProps) => {
       <DialogContent className="sm:max-w-[400px] p-0 gap-0 border-border/50 overflow-hidden">
         <div className="p-6 pb-4">
           {/* Logo & Title */}
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-1.5 mb-1">
-              {mode === 'forgot' ? (
-                <h2 className="text-xl font-semibold text-foreground">
-                  Восстановление доступа
-                </h2>
-              ) : (
-                <>
-                  <span className="text-lg text-muted-foreground">
-                    {mode === 'login' ? 'Вход в' : 'Регистрация в'}
-                  </span>
-                  <div className="flex items-baseline gap-0">
-                    <img src={ploozaLogo} alt="Plooza" className="h-5 w-auto" />
-                    <span className="text-lg font-semibold text-foreground">.ID</span>
-                  </div>
+          <div className="flex flex-col items-center mb-6">
+            {mode === 'forgot' ? (
+              <h2 className="text-xl font-semibold text-foreground">
+                Восстановление доступа
+              </h2>
+            ) : (
+              <>
+                <p className="text-muted-foreground mb-2">
+                  {mode === 'login' ? 'Вход в' : 'Регистрация в'}
+                </p>
+                <div className="flex items-center gap-1">
+                  <img src={ploozaLogo} alt="Plooza" className="h-6 w-auto" />
+                  <span className="text-xl font-bold text-foreground">.ID</span>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button type="button" className="text-muted-foreground hover:text-foreground transition-colors ml-0.5">
+                      <button type="button" className="text-muted-foreground hover:text-foreground transition-colors">
                         <HelpCircle className="w-4 h-4" />
                       </button>
                     </TooltipTrigger>
@@ -114,9 +112,9 @@ const AuthModal = ({ isOpen, onOpenChange }: AuthModalProps) => {
                       </p>
                     </TooltipContent>
                   </Tooltip>
-                </>
-              )}
-            </div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Form */}
