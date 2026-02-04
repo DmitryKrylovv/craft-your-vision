@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   LayoutGrid, 
   Server, 
@@ -40,20 +41,20 @@ const productCategories: ProductCategory[] = [
         title: 'Виртуальный хостинг',
         description: 'Размещение сайтов с поддержкой любой CMS',
         icon: Server,
-        href: '#',
+        href: '/hosting',
       },
       {
         title: 'WordPress хостинг',
         description: 'Оптимизированный хостинг для WordPress',
         icon: Boxes,
-        href: '#',
+        href: '/hosting',
         badge: 'Популярно',
       },
       {
         title: 'DNS-хостинг',
         description: 'Размещение домена на надежных NS серверах',
         icon: Network,
-        href: '#',
+        href: '/dns',
       },
     ],
   },
@@ -66,26 +67,26 @@ const productCategories: ProductCategory[] = [
         title: 'VPS на SSD',
         description: 'Быстрые виртуальные серверы на SSD дисках',
         icon: Zap,
-        href: '#',
+        href: '/vds',
         badge: 'от 99₽',
       },
       {
         title: 'VPS на NVMe',
         description: 'Максимальная скорость на NVMe накопителях',
         icon: Cpu,
-        href: '#',
+        href: '/vds',
       },
       {
         title: 'High-CPU VPS',
         description: 'Серверы с повышенной производительностью CPU',
         icon: Cpu,
-        href: '#',
+        href: '/vds',
       },
       {
         title: 'Managed VPS',
         description: 'VPS с полным администрированием от нас',
         icon: MonitorSmartphone,
-        href: '#',
+        href: '/vds',
       },
     ],
   },
@@ -98,13 +99,13 @@ const productCategories: ProductCategory[] = [
         title: 'Регистрация доменов',
         description: 'Более 500 доменных зон по лучшим ценам',
         icon: Globe,
-        href: '#',
+        href: '/domains',
       },
       {
         title: 'Трансфер доменов',
         description: 'Перенос домена к нам с продлением срока',
         icon: Network,
-        href: '#',
+        href: '/domains',
       },
     ],
   },
@@ -117,20 +118,20 @@ const productCategories: ProductCategory[] = [
         title: 'Бесплатный SSL',
         description: "Let's Encrypt сертификат бесплатно",
         icon: Lock,
-        href: '#',
+        href: '/ssl',
         badge: 'Бесплатно',
       },
       {
         title: 'Коммерческий SSL',
         description: 'Премиум сертификаты от ведущих CA',
         icon: Shield,
-        href: '#',
+        href: '/ssl',
       },
       {
         title: 'Wildcard SSL',
         description: 'Защита всех поддоменов одним сертификатом',
         icon: Shield,
-        href: '#',
+        href: '/ssl',
       },
     ],
   },
@@ -143,25 +144,25 @@ const productCategories: ProductCategory[] = [
         title: 'Выделенные серверы',
         description: 'Физические серверы в аренду',
         icon: Database,
-        href: '#',
+        href: '/dedicated',
       },
       {
         title: 'Колокация',
         description: 'Размещение вашего оборудования в ЦОД',
         icon: Server,
-        href: '#',
+        href: '/colocation',
+      },
+      {
+        title: 'Облачные сервисы',
+        description: 'Гибкие облачные решения для бизнеса',
+        icon: Cloud,
+        href: '/cloud',
       },
       {
         title: 'Защита от DDoS',
         description: 'Надежная защита от атак любой сложности',
         icon: Shield,
-        href: '#',
-      },
-      {
-        title: 'Бэкап данных',
-        description: 'Автоматическое резервное копирование',
-        icon: HardDrive,
-        href: '#',
+        href: '/dedicated',
       },
     ],
   },
@@ -238,9 +239,9 @@ const ProductsMenu = ({ isOpen, onOpenChange }: ProductsMenuProps) => {
                   {activeItems.map((item) => {
                     const Icon = item.icon;
                     return (
-                      <a
+                      <Link
                         key={item.title}
-                        href={item.href}
+                        to={item.href}
                         className="group flex items-start gap-2 lg:gap-3 p-2 lg:p-3 rounded-lg lg:rounded-xl hover:bg-muted transition-colors"
                         onClick={() => onOpenChange(false)}
                       >
@@ -262,7 +263,7 @@ const ProductsMenu = ({ isOpen, onOpenChange }: ProductsMenuProps) => {
                             {item.description}
                           </p>
                         </div>
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
