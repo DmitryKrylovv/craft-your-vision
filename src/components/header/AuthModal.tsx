@@ -106,7 +106,7 @@ const AuthModal = ({ isOpen, onOpenChange }: AuthModalProps) => {
                 </Tooltip>
               </div>
             )}
-            <h2 className="text-lg text-muted-foreground">
+            <h2 className="text-2xl font-semibold text-foreground">
               {mode === 'login' && 'Вход'}
               {mode === 'register' && 'Регистрация'}
               {mode === 'forgot' && 'Восстановление доступа'}
