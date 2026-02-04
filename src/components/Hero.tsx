@@ -149,7 +149,7 @@ const Hero = () => {
               return (
                 <div
                   key={index}
-                  className="flex-1 bg-blue-50 rounded-xl sm:rounded-2xl border border-blue-100 p-3 sm:p-5 relative overflow-hidden group cursor-pointer hover:border-primary/50 hover:shadow-md transition-all"
+                  className="flex-1 bg-card rounded-xl sm:rounded-2xl border border-border p-3 sm:p-5 relative overflow-hidden group cursor-pointer hover:border-primary/50 hover:shadow-md transition-all"
                 >
                   <div className="relative z-10 pr-0 sm:pr-16 lg:pr-20">
                     <div className="w-8 h-8 sm:hidden bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg flex items-center justify-center mb-2">
@@ -161,7 +161,7 @@ const Hero = () => {
                     <p className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground mb-1.5 sm:mb-3 leading-tight hidden sm:block">
                       {card.description}
                     </p>
-                    <span className="inline-block px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-blue-100 text-blue-700 text-[9px] sm:text-[10px] lg:text-xs font-medium rounded-md">
+                    <span className="inline-block px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-muted text-muted-foreground text-[9px] sm:text-[10px] lg:text-xs font-medium rounded-md">
                       {card.badge}
                     </span>
                   </div>
