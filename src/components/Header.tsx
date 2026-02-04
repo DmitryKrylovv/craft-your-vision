@@ -73,7 +73,7 @@ const Header = () => {
               {/* Search Button - Desktop & Tablet */}
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="hidden md:flex items-center gap-2 lg:gap-3 flex-1 max-w-[180px] lg:max-w-xs xl:max-w-md h-10 px-3 lg:px-4 bg-muted rounded-xl text-sm text-muted-foreground hover:bg-muted/80 transition-colors"
+                className="hidden md:flex items-center gap-2 lg:gap-3 flex-1 max-w-[180px] lg:max-w-xs xl:max-w-md px-4 py-3 bg-muted rounded-xl text-sm text-muted-foreground hover:bg-muted/80 transition-colors"
               >
                 <Search className="w-4 h-4 flex-shrink-0" />
                 <span className="truncate">Поиск провайдеров...</span>
