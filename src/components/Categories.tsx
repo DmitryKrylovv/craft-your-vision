@@ -11,7 +11,7 @@ const Categories = () => {
       gradient: 'from-slate-500 to-slate-600',
       iconBg: 'bg-slate-100',
       iconColor: 'text-slate-600',
-      href: '#',
+      href: '/providers',
     },
     {
       icon: Server,
@@ -31,7 +31,7 @@ const Categories = () => {
       gradient: 'from-violet-500 to-violet-600',
       iconBg: 'bg-violet-50',
       iconColor: 'text-violet-600',
-      href: '#',
+      href: '/hosting',
     },
     {
       icon: Database,
@@ -42,7 +42,7 @@ const Categories = () => {
       gradient: 'from-orange-500 to-orange-600',
       iconBg: 'bg-orange-50',
       iconColor: 'text-orange-600',
-      href: '#',
+      href: '/dedicated',
     },
     {
       icon: Globe,
@@ -52,7 +52,7 @@ const Categories = () => {
       gradient: 'from-cyan-500 to-cyan-600',
       iconBg: 'bg-cyan-50',
       iconColor: 'text-cyan-600',
-      href: '#',
+      href: '/domains',
     },
     {
       icon: Building2,
@@ -83,7 +83,7 @@ const Categories = () => {
       gradient: 'from-rose-500 to-rose-600',
       iconBg: 'bg-rose-50',
       iconColor: 'text-rose-600',
-      href: '#',
+      href: '/dedicated',
     },
   ];
 
