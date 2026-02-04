@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import ProviderPage from "./pages/ProviderPage";
 import VDSPage from "./pages/VDSPage";
 import HostingPage from "./pages/HostingPage";
+import DomainsPage from "./pages/DomainsPage";
 import CloudPage from "./pages/CloudPage";
 import ColocationPage from "./pages/ColocationPage";
 import ProvidersRatingPage from "./pages/ProvidersRatingPage";
@@ -59,6 +60,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/vds" element={<VDSPage />} />
               <Route path="/hosting" element={<HostingPage />} />
+              <Route path="/domains" element={<DomainsPage />} />
               <Route path="/cloud" element={<CloudPage />} />
               <Route path="/colocation" element={<ColocationPage />} />
               <Route path="/providers" element={<ProvidersRatingPage />} />
