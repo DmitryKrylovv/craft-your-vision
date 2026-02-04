@@ -8,7 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
-import { Mail, Lock, Eye, EyeOff, User, ArrowRight, Shield, HelpCircle } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, User, ArrowRight, HelpCircle } from 'lucide-react';
+import ploozaLogo from '@/assets/plooza-logo.svg';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -87,28 +88,33 @@ const AuthModal = ({ isOpen, onOpenChange }: AuthModalProps) => {
         <div className="p-6 pb-4">
           {/* Logo & Title */}
           <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-3">
-              <Shield className="w-6 h-6 text-primary" />
-            </div>
-            <div className="flex items-center justify-center gap-1.5">
-              <h2 className="text-xl font-semibold text-foreground">
-                {mode === 'login' && 'Вход в Plooza.ID'}
-                {mode === 'register' && 'Регистрация в Plooza.ID'}
-                {mode === 'forgot' && 'Восстановление доступа'}
-              </h2>
-              {mode !== 'forgot' && (
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button" className="text-muted-foreground hover:text-foreground transition-colors">
-                      <HelpCircle className="w-4 h-4" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" className="max-w-[240px] text-center">
-                    <p className="text-xs">
-                      <span className="font-medium">Plooza.ID</span> — единый аккаунт для всех сервисов платформы: управление серверами, биллинг, поддержка и многое другое.
-                    </p>
-                  </TooltipContent>
-                </Tooltip>
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              {mode === 'forgot' ? (
+                <h2 className="text-xl font-semibold text-foreground">
+                  Восстановление доступа
+                </h2>
+              ) : (
+                <>
+                  <span className="text-lg text-muted-foreground">
+                    {mode === 'login' ? 'Вход в' : 'Регистрация в'}
+                  </span>
+                  <div className="flex items-baseline gap-0">
+                    <img src={ploozaLogo} alt="Plooza" className="h-5 w-auto" />
+                    <span className="text-lg font-semibold text-foreground">.ID</span>
+                  </div>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button type="button" className="text-muted-foreground hover:text-foreground transition-colors ml-0.5">
+                        <HelpCircle className="w-4 h-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="max-w-[240px] text-center">
+                      <p className="text-xs">
+                        <span className="font-medium">Plooza.ID</span> — единый аккаунт для всех сервисов платформы: управление серверами, биллинг, поддержка и многое другое.
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
+                </>
               )}
             </div>
           </div>
