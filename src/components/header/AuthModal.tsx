@@ -87,21 +87,14 @@ const AuthModal = ({ isOpen, onOpenChange }: AuthModalProps) => {
       <DialogContent className="sm:max-w-[400px] p-0 gap-0 border-border/50 overflow-hidden">
         <div className="p-6 pb-4">
           {/* Logo & Title */}
-          <div className="flex justify-center mb-6">
-            {mode === 'forgot' ? (
-              <h2 className="text-xl font-semibold text-foreground">
-                Восстановление доступа
-              </h2>
-            ) : (
-              <div className="flex items-center gap-1.5">
-                <span className="text-lg text-muted-foreground">
-                  {mode === 'login' ? 'Вход в' : 'Регистрация в'}
-                </span>
-                <img src={ploozaLogo} alt="Plooza" className="h-5 w-auto" />
-                <span className="text-lg font-bold text-foreground -ml-1">.ID</span>
+          <div className="flex flex-col items-center mb-6">
+            {mode !== 'forgot' && (
+              <div className="flex items-center gap-0.5 mb-2">
+                <img src={ploozaLogo} alt="Plooza" className="h-6 w-auto" />
+                <span className="text-xl font-bold text-foreground">.ID</span>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button type="button" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <button type="button" className="text-muted-foreground hover:text-foreground transition-colors ml-1">
                       <HelpCircle className="w-4 h-4" />
                     </button>
                   </TooltipTrigger>
@@ -113,6 +106,11 @@ const AuthModal = ({ isOpen, onOpenChange }: AuthModalProps) => {
                 </Tooltip>
               </div>
             )}
+            <h2 className="text-lg text-muted-foreground">
+              {mode === 'login' && 'Вход'}
+              {mode === 'register' && 'Регистрация'}
+              {mode === 'forgot' && 'Восстановление доступа'}
+            </h2>
           </div>
 
           {/* Form */}
