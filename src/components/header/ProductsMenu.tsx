@@ -1,18 +1,19 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { 
   LayoutGrid, 
   Server, 
+  HardDrive, 
+  Globe, 
+  Shield, 
   Cloud, 
-  Building2,
-  Wrench,
-  Briefcase,
-  Users,
-  Star,
-  BookOpen,
-  HelpCircle,
+  Database, 
+  Cpu,
   ChevronDown,
-  ArrowRight
+  Zap,
+  Lock,
+  Network,
+  Boxes,
+  MonitorSmartphone
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -31,91 +32,136 @@ interface ProductCategory {
 
 const productCategories: ProductCategory[] = [
   {
-    id: 'servers',
-    label: 'Серверы',
-    icon: Server,
+    id: 'hosting',
+    label: 'Хостинг',
+    icon: HardDrive,
     items: [
       {
-        title: 'VDS/VPS серверы',
-        description: 'Виртуальные серверы от проверенных провайдеров',
+        title: 'Виртуальный хостинг',
+        description: 'Размещение сайтов с поддержкой любой CMS',
         icon: Server,
-        href: '/vds',
+        href: '#',
+      },
+      {
+        title: 'WordPress хостинг',
+        description: 'Оптимизированный хостинг для WordPress',
+        icon: Boxes,
+        href: '#',
         badge: 'Популярно',
       },
       {
-        title: 'Облачные серверы',
-        description: 'Гибкие облачные решения с почасовой оплатой',
-        icon: Cloud,
-        href: '/cloud',
+        title: 'DNS-хостинг',
+        description: 'Размещение домена на надежных NS серверах',
+        icon: Network,
+        href: '#',
+      },
+    ],
+  },
+  {
+    id: 'vps',
+    label: 'Облачные VPS',
+    icon: Cloud,
+    items: [
+      {
+        title: 'VPS на SSD',
+        description: 'Быстрые виртуальные серверы на SSD дисках',
+        icon: Zap,
+        href: '#',
+        badge: 'от 99₽',
+      },
+      {
+        title: 'VPS на NVMe',
+        description: 'Максимальная скорость на NVMe накопителях',
+        icon: Cpu,
+        href: '#',
+      },
+      {
+        title: 'High-CPU VPS',
+        description: 'Серверы с повышенной производительностью CPU',
+        icon: Cpu,
+        href: '#',
+      },
+      {
+        title: 'Managed VPS',
+        description: 'VPS с полным администрированием от нас',
+        icon: MonitorSmartphone,
+        href: '#',
+      },
+    ],
+  },
+  {
+    id: 'domains',
+    label: 'Домены',
+    icon: Globe,
+    items: [
+      {
+        title: 'Регистрация доменов',
+        description: 'Более 500 доменных зон по лучшим ценам',
+        icon: Globe,
+        href: '#',
+      },
+      {
+        title: 'Трансфер доменов',
+        description: 'Перенос домена к нам с продлением срока',
+        icon: Network,
+        href: '#',
+      },
+    ],
+  },
+  {
+    id: 'ssl',
+    label: 'SSL-сертификаты',
+    icon: Shield,
+    items: [
+      {
+        title: 'Бесплатный SSL',
+        description: "Let's Encrypt сертификат бесплатно",
+        icon: Lock,
+        href: '#',
+        badge: 'Бесплатно',
+      },
+      {
+        title: 'Коммерческий SSL',
+        description: 'Премиум сертификаты от ведущих CA',
+        icon: Shield,
+        href: '#',
+      },
+      {
+        title: 'Wildcard SSL',
+        description: 'Защита всех поддоменов одним сертификатом',
+        icon: Shield,
+        href: '#',
+      },
+    ],
+  },
+  {
+    id: 'dedicated',
+    label: 'Сервисы и услуги',
+    icon: Database,
+    items: [
+      {
+        title: 'Выделенные серверы',
+        description: 'Физические серверы в аренду',
+        icon: Database,
+        href: '#',
       },
       {
         title: 'Колокация',
-        description: 'Размещение оборудования в дата-центрах',
-        icon: Building2,
-        href: '/colocation',
-      },
-    ],
-  },
-  {
-    id: 'services',
-    label: 'Сервисы',
-    icon: Wrench,
-    items: [
-      {
-        title: 'Smart Hands',
-        description: 'Удалённые руки в дата-центрах по всему миру',
-        icon: Wrench,
-        href: '/smart-hands',
+        description: 'Размещение вашего оборудования в ЦОД',
+        icon: Server,
+        href: '#',
       },
       {
-        title: 'Jobs',
-        description: 'Вакансии и специалисты в IT-инфраструктуре',
-        icon: Briefcase,
-        href: '/freelance',
-      },
-    ],
-  },
-  {
-    id: 'providers',
-    label: 'Провайдеры',
-    icon: Users,
-    items: [
-      {
-        title: 'Рейтинг провайдеров',
-        description: 'Сравнение и отзывы о хостинг-провайдерах',
-        icon: Star,
-        href: '/providers',
+        title: 'Защита от DDoS',
+        description: 'Надежная защита от атак любой сложности',
+        icon: Shield,
+        href: '#',
       },
       {
-        title: 'Для провайдеров',
-        description: 'Разместите свои услуги на маркетплейсе',
-        icon: Users,
-        href: '/for-providers',
-      },
-    ],
-  },
-  {
-    id: 'info',
-    label: 'Информация',
-    icon: BookOpen,
-    items: [
-      {
-        title: 'Блог',
-        description: 'Статьи, новости и обзоры из мира хостинга',
-        icon: BookOpen,
-        href: '/blog',
-      },
-      {
-        title: 'Помощь',
-        description: 'Ответы на частые вопросы и поддержка',
-        icon: HelpCircle,
-        href: '/help',
-      },
-      {
-        title: 'О нас',
-        description: 'Узнайте больше о платформе Plooza',
-        icon: Users,
-        href: '/about',
+        title: 'Бэкап данных',
+        description: 'Автоматическое резервное копирование',
+        icon: HardDrive,
+        href: '#',
       },
     ],
   },
@@ -159,10 +205,10 @@ const ProductsMenu = ({ isOpen, onOpenChange }: ProductsMenuProps) => {
           />
           
           {/* Menu */}
-          <div className="absolute top-full left-0 mt-2 z-50 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden w-[calc(100vw-2rem)] md:w-auto md:min-w-[600px] lg:min-w-[700px] max-w-[700px] animate-in fade-in-0 zoom-in-95 duration-200">
+          <div className="absolute top-full left-0 mt-2 z-50 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden w-[calc(100vw-2rem)] md:w-auto md:min-w-[750px] lg:min-w-[900px] max-w-[900px] animate-in fade-in-0 zoom-in-95 duration-200">
             <div className="flex">
               {/* Categories sidebar */}
-              <div className="w-44 md:w-48 bg-muted/50 p-2 md:p-3 border-r border-border flex-shrink-0">
+              <div className="w-48 md:w-56 lg:w-72 bg-muted/50 p-2 md:p-3 border-r border-border flex-shrink-0">
                 {productCategories.map((category) => {
                   const Icon = category.icon;
                   return (
@@ -188,38 +234,47 @@ const ProductsMenu = ({ isOpen, onOpenChange }: ProductsMenuProps) => {
                 <h3 className="text-base lg:text-lg font-semibold text-foreground mb-3 lg:mb-4">
                   {productCategories.find(c => c.id === activeCategory)?.label}
                 </h3>
-                <div className="grid grid-cols-1 gap-2 lg:gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 lg:gap-3">
                   {activeItems.map((item) => {
                     const Icon = item.icon;
                     return (
-                      <Link
+                      <a
                         key={item.title}
-                        to={item.href}
-                        className="group flex items-start gap-3 p-3 rounded-xl hover:bg-muted transition-colors"
+                        href={item.href}
+                        className="group flex items-start gap-2 lg:gap-3 p-2 lg:p-3 rounded-lg lg:rounded-xl hover:bg-muted transition-colors"
                         onClick={() => onOpenChange(false)}
                       >
-                        <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-shrink-0">
-                          <Icon className="w-5 h-5" />
+                        <div className="p-1.5 lg:p-2 rounded-md lg:rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-shrink-0">
+                          <Icon className="w-4 h-4 lg:w-5 lg:h-5" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="font-medium text-sm text-foreground group-hover:text-primary transition-colors">
+                          <div className="flex items-center gap-1.5 lg:gap-2 flex-wrap">
+                            <span className="font-medium text-xs lg:text-sm text-foreground group-hover:text-primary transition-colors">
                               {item.title}
                             </span>
                             {item.badge && (
-                              <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">
+                              <span className="text-[9px] lg:text-[10px] bg-primary/10 text-primary px-1.5 lg:px-2 py-0.5 rounded-full font-medium">
                                 {item.badge}
                               </span>
                             )}
                           </div>
-                          <p className="text-xs text-muted-foreground mt-0.5">
+                          <p className="text-[10px] lg:text-xs text-muted-foreground mt-0.5 line-clamp-2 hidden md:block">
                             {item.description}
                           </p>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity mt-1" />
-                      </Link>
+                      </a>
                     );
                   })}
+                </div>
+
+                {/* Footer links */}
+                <div className="flex items-center gap-4 lg:gap-6 mt-4 lg:mt-6 pt-3 lg:pt-4 border-t border-border">
+                  <a href="#" className="text-xs lg:text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Бесплатный перенос сайта
+                  </a>
+                  <a href="#" className="text-xs lg:text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Партнерская программа
+                  </a>
                 </div>
               </div>
             </div>
