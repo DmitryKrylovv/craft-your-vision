@@ -92,11 +92,11 @@ const AuthModal = ({ isOpen, onOpenChange }: AuthModalProps) => {
               <img src={ploozaLogo} alt="Plooza" className="h-5 w-auto" />
               <span className="text-lg font-bold text-foreground">.ID</span>
               {mode !== 'forgot' && (
-                <Tooltip>
+                <Tooltip delayDuration={300}>
                   <TooltipTrigger asChild>
-                    <button type="button" className="text-muted-foreground hover:text-foreground transition-colors ml-0.5">
+                    <span className="text-muted-foreground hover:text-foreground transition-colors ml-0.5 cursor-help">
                       <HelpCircle className="w-3.5 h-3.5" />
-                    </button>
+                    </span>
                   </TooltipTrigger>
                   <TooltipContent side="bottom" className="max-w-[240px] text-center">
                     <p className="text-xs">
