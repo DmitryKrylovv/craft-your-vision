@@ -1,31 +1,32 @@
+import { Link } from 'react-router-dom';
 import ploozaLogo from '@/assets/plooza-logo.svg';
 
 const Footer = () => {
   const links = {
     'Услуги': [
-      { label: 'VPS/VDS хостинг', href: '#' },
-      { label: 'Виртуальный хостинг', href: '#' },
-      { label: 'Выделенные серверы', href: '#' },
-      { label: 'Домены', href: '#' },
-      { label: 'SSL-сертификаты', href: '#' },
+      { label: 'VPS/VDS хостинг', href: '/vds' },
+      { label: 'Виртуальный хостинг', href: '/hosting' },
+      { label: 'Выделенные серверы', href: '/dedicated' },
+      { label: 'Домены', href: '/domains' },
+      { label: 'SSL-сертификаты', href: '/ssl' },
     ],
     'Рейтинги': [
-      { label: 'Лучшие провайдеры', href: '#' },
-      { label: 'По цене', href: '#' },
-      { label: 'По отзывам', href: '#' },
-      { label: 'По надёжности', href: '#' },
+      { label: 'Лучшие провайдеры', href: '/providers' },
+      { label: 'По цене', href: '/providers' },
+      { label: 'По отзывам', href: '/providers' },
+      { label: 'По надёжности', href: '/providers' },
     ],
     'Компания': [
-      { label: 'О нас', href: '#' },
-      { label: 'Контакты', href: '#' },
-      { label: 'Блог', href: '#' },
-      { label: 'Партнёрам', href: '#' },
+      { label: 'О нас', href: '/about' },
+      { label: 'Контакты', href: '/about' },
+      { label: 'Блог', href: '/blog' },
+      { label: 'Партнёрам', href: '/for-providers' },
     ],
     'Поддержка': [
-      { label: 'FAQ', href: '#' },
-      { label: 'Как выбрать хостинг', href: '#' },
-      { label: 'Глоссарий', href: '#' },
-      { label: 'Обратная связь', href: '#' },
+      { label: 'FAQ', href: '/help' },
+      { label: 'Как выбрать хостинг', href: '/help' },
+      { label: 'Глоссарий', href: '/help' },
+      { label: 'Обратная связь', href: '/help' },
     ],
   };
 
@@ -35,9 +36,9 @@ const Footer = () => {
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Logo & description */}
           <div className="col-span-2 sm:col-span-4 md:col-span-1 mb-2 sm:mb-0">
-            <a href="/" className="inline-block mb-3 sm:mb-4">
+            <Link to="/" className="inline-block mb-3 sm:mb-4">
               <img src={ploozaLogo} alt="Plooza" className="h-6 sm:h-7 brightness-0 invert" />
-            </a>
+            </Link>
             <p className="text-background/70 text-xs sm:text-sm leading-relaxed">
               Независимый маркетплейс хостинг-провайдеров России и СНГ
             </p>
@@ -50,12 +51,12 @@ const Footer = () => {
               <ul className="space-y-1.5 sm:space-y-2">
                 {items.map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="text-xs sm:text-sm text-background/70 hover:text-background transition-colors"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
