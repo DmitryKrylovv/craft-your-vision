@@ -86,11 +86,7 @@
                  </div>
                  
                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-                   <div className="flex items-baseline gap-2">
-                     <img src={ploozaLogo} alt="Plooza" className="h-8 md:h-10 lg:h-12 w-auto" />
-                     <span className="text-primary">.Pay</span>
-                   </div>
-                   <span className="block mt-2">Кэшбэк до 10%</span>
+                   Кэшбэк до 10%
                  </h1>
                  
                  <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-md">

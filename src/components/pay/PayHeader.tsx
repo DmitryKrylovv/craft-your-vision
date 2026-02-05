@@ -70,10 +70,6 @@
  
                {/* Desktop Actions */}
                <div className="hidden md:flex items-center gap-3 ml-auto">
-                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-xl">
-                   <Wallet className="w-4 h-4 text-primary" />
-                   <span className="font-semibold text-primary">12 450 ₽</span>
-                 </div>
                  <Button size="sm" className="gap-2" onClick={() => setIsAuthModalOpen(true)}>
                    <User className="w-4 h-4" />
                    Войти
@@ -81,11 +77,7 @@
                </div>
  
                {/* Mobile Menu */}
-               <div className="md:hidden ml-auto flex items-center gap-2">
-                 <div className="flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded-lg">
-                   <Wallet className="w-3.5 h-3.5 text-primary" />
-                   <span className="text-sm font-semibold text-primary">12 450 ₽</span>
-                 </div>
+               <div className="md:hidden ml-auto">
                  <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                    <SheetTrigger asChild>
                      <button className="p-2 hover:bg-muted rounded-lg transition-colors">
