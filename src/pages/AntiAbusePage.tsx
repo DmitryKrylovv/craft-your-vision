@@ -159,15 +159,22 @@
 
             {/* Free badge */}
             <motion.div
-              className="mt-12 inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-background/10 backdrop-blur-sm border border-background/20"
+              className="mt-12 flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.1 }}
             >
-              <CheckCircle2 className="w-6 h-6 text-emerald-400" />
-              <span className="text-background font-medium">
-                Полностью бесплатно для провайдеров, интегрированных с Plooza
-              </span>
+              <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                <span className="text-background font-medium">
+                  Бесплатно для партнёров Plooza
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-background/10 backdrop-blur-sm border border-background/20">
+                <span className="text-background font-medium">
+                  500 ₽/мес для остальных провайдеров
+                </span>
+              </div>
             </motion.div>
            </div>
  
@@ -572,7 +579,7 @@
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            * Сервис полностью бесплатный для всех провайдеров, интегрированных с маркетплейсом Plooza
+            * Бесплатно для партнёров Plooza • 500 ₽/мес для независимых провайдеров
           </motion.p>
          </div>
        </section>
