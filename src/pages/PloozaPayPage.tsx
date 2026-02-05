@@ -1,6 +1,6 @@
  import { useState } from 'react';
  import { Button } from '@/components/ui/button';
- import Header from '@/components/Header';
+ import PayHeader from '@/components/pay/PayHeader';
  import Footer from '@/components/Footer';
  import ploozaLogo from '@/assets/plooza-logo.svg';
  import {
@@ -26,26 +26,22 @@
      {
        icon: Coins,
        title: 'Кэшбэк за заказы',
-       description: 'До 10% кэшбэка на все покупки услуг хостинга через Plooza',
-       color: 'emerald'
+       description: 'До 10% кэшбэка на все покупки услуг хостинга через Plooza'
      },
      {
        icon: Store,
        title: 'Кэшбэк напрямую',
-       description: 'Покупайте у провайдера напрямую и всё равно получайте кэшбэк',
-       color: 'blue'
+       description: 'Покупайте у провайдера напрямую и всё равно получайте кэшбэк'
      },
      {
        icon: BadgePercent,
        title: 'Эксклюзивные скидки',
-       description: 'Специальные предложения и промокоды только для участников',
-       color: 'violet'
+       description: 'Специальные предложения и промокоды только для участников'
      },
      {
        icon: Gift,
        title: 'Бонусы и акции',
-       description: 'Регулярные акции с повышенным кэшбэком и подарками',
-       color: 'amber'
+       description: 'Регулярные акции с повышенным кэшбэком и подарками'
      },
    ];
  
@@ -72,46 +68,19 @@
      },
    ];
  
-   const colorClasses: Record<string, { bg: string; border: string; icon: string; iconBg: string }> = {
-     emerald: {
-       bg: 'from-emerald-500/10 to-emerald-500/5',
-       border: 'border-emerald-500/20 hover:border-emerald-500/40',
-       icon: 'text-emerald-600',
-       iconBg: 'bg-emerald-500/20'
-     },
-     blue: {
-       bg: 'from-blue-500/10 to-blue-500/5',
-       border: 'border-blue-500/20 hover:border-blue-500/40',
-       icon: 'text-blue-600',
-       iconBg: 'bg-blue-500/20'
-     },
-     violet: {
-       bg: 'from-violet-500/10 to-violet-500/5',
-       border: 'border-violet-500/20 hover:border-violet-500/40',
-       icon: 'text-violet-600',
-       iconBg: 'bg-violet-500/20'
-     },
-     amber: {
-       bg: 'from-amber-500/10 to-amber-500/5',
-       border: 'border-amber-500/20 hover:border-amber-500/40',
-       icon: 'text-amber-600',
-       iconBg: 'bg-amber-500/20'
-     },
-   };
- 
    return (
      <div className="min-h-screen flex flex-col bg-background">
-       <Header />
+       <PayHeader />
        
        <main className="flex-1">
          {/* Hero Section */}
-         <section className="relative overflow-hidden bg-gradient-to-br from-emerald-500/5 via-background to-background">
+         <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-background">
            <div className="container py-10 md:py-16">
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                
                {/* Left - Text */}
                <div>
-                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full text-sm text-emerald-600 font-medium mb-5">
+                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium mb-5">
                    <Wallet className="w-4 h-4" />
                    Кошелёк с кэшбэком
                  </div>
@@ -119,7 +88,7 @@
                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
                    <div className="flex items-baseline gap-2">
                      <img src={ploozaLogo} alt="Plooza" className="h-8 md:h-10 lg:h-12 w-auto" />
-                     <span className="text-emerald-500">.Pay</span>
+                     <span className="text-primary">.Pay</span>
                    </div>
                    <span className="block mt-2">Кэшбэк до 10%</span>
                  </h1>
@@ -129,7 +98,7 @@
                  </p>
                  
                  <div className="flex flex-wrap gap-3 mb-8">
-                   <Button size="lg" className="rounded-xl bg-emerald-500 hover:bg-emerald-600">
+                   <Button size="lg" className="rounded-xl">
                      Создать кошелёк
                      <ArrowRight className="w-4 h-4 ml-2" />
                    </Button>
@@ -141,15 +110,15 @@
                  {/* Trust indicators */}
                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                    <div className="flex items-center gap-1.5">
-                     <Check className="w-4 h-4 text-emerald-500" />
+                     <Check className="w-4 h-4 text-primary" />
                      Без комиссий
                    </div>
                    <div className="flex items-center gap-1.5">
-                     <Clock className="w-4 h-4 text-emerald-500" />
+                     <Clock className="w-4 h-4 text-primary" />
                      Мгновенный вывод
                    </div>
                    <div className="flex items-center gap-1.5">
-                     <Shield className="w-4 h-4 text-emerald-500" />
+                     <Shield className="w-4 h-4 text-primary" />
                      Безопасно
                    </div>
                  </div>
@@ -160,13 +129,13 @@
                  <div className="bg-card border border-border rounded-2xl p-6 shadow-card">
                    {/* Wallet Header */}
                    <div className="flex items-center gap-3 mb-6">
-                     <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
-                       <Wallet className="w-5 h-5 text-emerald-600" />
+                     <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                       <Wallet className="w-5 h-5 text-primary" />
                      </div>
                      <div>
                        <div className="flex items-center gap-1">
                          <img src={ploozaLogo} alt="Plooza" className="h-4 w-auto" />
-                         <span className="font-semibold text-emerald-500">.Pay</span>
+                         <span className="font-semibold text-primary">.Pay</span>
                        </div>
                        <div className="text-xs text-muted-foreground">Ваш кошелёк</div>
                      </div>
@@ -183,45 +152,45 @@
                      <div className="text-sm font-medium text-muted-foreground">Последние начисления</div>
                      <div className="flex items-center justify-between py-2 border-b border-border">
                        <div className="flex items-center gap-3">
-                         <div className="w-8 h-8 bg-emerald-500/10 rounded-lg flex items-center justify-center">
-                           <TrendingUp className="w-4 h-4 text-emerald-600" />
+                         <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                           <TrendingUp className="w-4 h-4 text-primary" />
                          </div>
                          <div>
                            <div className="text-sm font-medium">Кэшбэк VDS</div>
                            <div className="text-xs text-muted-foreground">Selectel</div>
                          </div>
                        </div>
-                       <div className="text-emerald-500 font-semibold">+450 ₽</div>
+                       <div className="text-primary font-semibold">+450 ₽</div>
                      </div>
                      <div className="flex items-center justify-between py-2 border-b border-border">
                        <div className="flex items-center gap-3">
-                         <div className="w-8 h-8 bg-emerald-500/10 rounded-lg flex items-center justify-center">
-                           <Gift className="w-4 h-4 text-emerald-600" />
+                         <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                           <Gift className="w-4 h-4 text-primary" />
                          </div>
                          <div>
                            <div className="text-sm font-medium">Бонус за регистрацию</div>
                            <div className="text-xs text-muted-foreground">Акция</div>
                          </div>
                        </div>
-                       <div className="text-emerald-500 font-semibold">+500 ₽</div>
+                       <div className="text-primary font-semibold">+500 ₽</div>
                      </div>
                      <div className="flex items-center justify-between py-2">
                        <div className="flex items-center gap-3">
-                         <div className="w-8 h-8 bg-emerald-500/10 rounded-lg flex items-center justify-center">
-                           <Receipt className="w-4 h-4 text-emerald-600" />
+                         <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                           <Receipt className="w-4 h-4 text-primary" />
                          </div>
                          <div>
                            <div className="text-sm font-medium">Кэшбэк Хостинг</div>
                            <div className="text-xs text-muted-foreground">REG.RU</div>
                          </div>
                        </div>
-                       <div className="text-emerald-500 font-semibold">+320 ₽</div>
+                       <div className="text-primary font-semibold">+320 ₽</div>
                      </div>
                    </div>
                  </div>
  
                  {/* Stats Badge */}
-                 <div className="absolute -top-4 -right-4 bg-emerald-500 text-white px-4 py-2 rounded-xl font-bold shadow-lg">
+                 <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-xl font-bold shadow-lg">
                    до 10% кэшбэк
                  </div>
                </div>
@@ -233,7 +202,7 @@
          <section className="container py-12 md:py-20">
            <div className="text-center mb-12">
              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-               Преимущества <span className="text-emerald-500">Pay</span>
+               Преимущества <span className="text-primary">Pay</span>
              </h2>
              <p className="text-muted-foreground max-w-lg mx-auto">
                Экономьте на каждой покупке хостинга и серверов
@@ -241,21 +210,18 @@
            </div>
  
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-             {benefits.map((benefit, index) => {
-               const colors = colorClasses[benefit.color];
-               return (
-                 <div 
-                   key={index}
-                   className={`bg-gradient-to-br ${colors.bg} border ${colors.border} rounded-2xl p-5 transition-colors`}
-                 >
-                   <div className={`w-12 h-12 rounded-xl ${colors.iconBg} flex items-center justify-center mb-4`}>
-                     <benefit.icon className={`w-6 h-6 ${colors.icon}`} />
-                   </div>
-                   <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
-                   <p className="text-sm text-muted-foreground">{benefit.description}</p>
+             {benefits.map((benefit, index) => (
+               <div 
+                 key={index}
+                 className="bg-card border border-border hover:border-primary/30 rounded-2xl p-5 transition-colors"
+               >
+                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                   <benefit.icon className="w-6 h-6 text-primary" />
                  </div>
-               );
-             })}
+                 <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
+                 <p className="text-sm text-muted-foreground">{benefit.description}</p>
+               </div>
+             ))}
            </div>
          </section>
  
@@ -274,7 +240,7 @@
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                {howItWorks.map((item, index) => (
                  <div key={index} className="bg-card border border-border rounded-2xl p-6 text-center">
-                   <div className="text-4xl font-bold text-emerald-500 mb-3">{item.step}</div>
+                   <div className="text-4xl font-bold text-primary mb-3">{item.step}</div>
                    <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
                    <p className="text-sm text-muted-foreground">{item.description}</p>
                  </div>
@@ -287,13 +253,13 @@
          <section className="container py-12 md:py-20">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
              <div>
-               <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full text-sm text-emerald-600 font-medium mb-5">
+               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium mb-5">
                  <Sparkles className="w-4 h-4" />
                  Уникальная возможность
                </div>
                
                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                 Кэшбэк даже при покупке <span className="text-emerald-500">напрямую</span>
+                 Кэшбэк даже при покупке <span className="text-primary">напрямую</span>
                </h2>
                
                <p className="text-muted-foreground mb-6">
@@ -309,13 +275,13 @@
                    'Отслеживайте все начисления',
                  ].map((item) => (
                    <li key={item} className="flex items-center gap-3">
-                     <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
+                     <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                      <span className="text-foreground">{item}</span>
                    </li>
                  ))}
                </ul>
                
-               <Button className="rounded-xl bg-emerald-500 hover:bg-emerald-600">
+               <Button className="rounded-xl">
                  Смотреть провайдеров
                  <ArrowRight className="w-4 h-4 ml-2" />
                </Button>
@@ -330,7 +296,7 @@
                  {['Selectel', 'REG.RU', 'Timeweb', 'VDSina', 'RUVDS', 'Beget'].map((provider) => (
                    <div key={provider} className="bg-muted rounded-xl p-3 text-center">
                      <div className="text-sm font-medium text-foreground">{provider}</div>
-                     <div className="text-xs text-emerald-500">до 10%</div>
+                     <div className="text-xs text-primary">до 10%</div>
                    </div>
                  ))}
                </div>
@@ -339,19 +305,19 @@
          </section>
  
          {/* CTA */}
-         <section className="bg-emerald-500 py-12 md:py-16">
+         <section className="bg-primary py-12 md:py-16">
            <div className="container text-center">
-             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+             <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
                Начните экономить уже сегодня
              </h2>
-             <p className="text-white/80 mb-6 max-w-lg mx-auto">
+             <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">
                Создайте кошелёк Plooza Pay и получите приветственный бонус 500₽
              </p>
-             <Button size="lg" className="rounded-xl bg-white text-emerald-600 hover:bg-white/90">
+             <Button size="lg" variant="secondary" className="rounded-xl">
                Создать кошелёк бесплатно
                <ArrowRight className="w-4 h-4 ml-2" />
              </Button>
-             <div className="flex flex-wrap justify-center gap-6 mt-6 text-white/70 text-sm">
+             <div className="flex flex-wrap justify-center gap-6 mt-6 text-primary-foreground/70 text-sm">
                <div className="flex items-center gap-2">
                  <CheckCircle2 className="w-4 h-4" />
                  <span>Без комиссий</span>
