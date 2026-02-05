@@ -203,8 +203,8 @@ const productCategories: ProductCategory[] = [
         badge: 'Новинка',
       },
       {
-        title: 'Jobs',
-        description: 'Фриланс-платформа для IT-специалистов',
+       title: 'Plooza Jobs',
+       description: 'Фриланс-платформа для IT-специалистов',
         icon: Users,
         href: '/freelance',
       },
