@@ -79,6 +79,11 @@
                
                {/* Left - Text */}
                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-full text-sm text-primary font-medium mb-5">
+                    <Sparkles className="w-4 h-4" />
+                    Бонусная программа
+                  </div>
+                  
                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
                    Зарабатывай на том,<br />
                    <span className="text-primary">что и так покупаешь</span>
