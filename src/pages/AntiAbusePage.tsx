@@ -157,25 +157,6 @@
                </div>
              </motion.div>
 
-            {/* Free badge */}
-            <motion.div
-              className="mt-12 flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1.1 }}
-            >
-              <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30">
-                <CheckCircle2 className="w-6 h-6 text-emerald-400" />
-                <span className="text-background font-medium">
-                  Бесплатно для партнёров Plooza
-                </span>
-              </div>
-              <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-background/10 backdrop-blur-sm border border-background/20">
-                <span className="text-background font-medium">
-                  500 ₽/мес для остальных провайдеров
-                </span>
-              </div>
-            </motion.div>
            </div>
  
            {/* Stats block - right side */}
@@ -223,6 +204,125 @@
          </motion.div>
        </section>
  
+       {/* Pricing Section */}
+       <section className="py-24 md:py-32 bg-muted">
+         <div className="container px-6">
+           <motion.div
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true, margin: "-100px" }}
+             variants={fadeInUp}
+             className="mb-16 text-center"
+           >
+             <h2 className="text-5xl md:text-7xl font-black mb-4 tracking-tight">
+               ТАРИФЫ
+             </h2>
+             <p className="text-xl text-muted-foreground max-w-xl mx-auto">
+               Простые и прозрачные условия подключения
+             </p>
+           </motion.div>
+
+           <motion.div 
+             className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true, margin: "-50px" }}
+             variants={staggerContainer}
+           >
+             {/* Free Plan */}
+             <motion.div variants={scaleIn}>
+               <div className="relative bg-card p-8 md:p-10 border-2 border-primary rounded-2xl h-full">
+                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                   <span className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide">
+                     Рекомендуем
+                   </span>
+                 </div>
+                 <div className="text-center mb-8 pt-4">
+                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
+                     <CheckCircle2 className="w-8 h-8 text-primary" />
+                   </div>
+                   <h3 className="text-2xl font-black mb-2">Партнёр Plooza</h3>
+                   <p className="text-muted-foreground">Для интегрированных провайдеров</p>
+                 </div>
+                 <div className="text-center mb-8">
+                   <div className="text-6xl font-black text-primary">0₽</div>
+                   <div className="text-muted-foreground">навсегда</div>
+                 </div>
+                 <ul className="space-y-4 mb-8">
+                   {[
+                     'Полный функционал Anti Abuse',
+                     'Неограниченные синхронизации',
+                     'Email и Telegram уведомления',
+                     'Приоритетная поддержка',
+                     'Доступ к общей базе нарушителей',
+                   ].map((item) => (
+                     <li key={item} className="flex items-center gap-3">
+                       <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                       <span>{item}</span>
+                     </li>
+                   ))}
+                 </ul>
+                 <Button 
+                   onClick={scrollToForm}
+                   className="w-full h-14 text-lg font-bold rounded-xl"
+                 >
+                   Подключиться к Plooza
+                   <ArrowRight className="w-5 h-5 ml-2" />
+                 </Button>
+               </div>
+             </motion.div>
+
+             {/* Paid Plan */}
+             <motion.div variants={scaleIn}>
+               <div className="bg-card p-8 md:p-10 border-2 border-border hover:border-primary/50 transition-colors rounded-2xl h-full">
+                 <div className="text-center mb-8">
+                   <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-2xl mb-4">
+                     <Shield className="w-8 h-8 text-muted-foreground" />
+                   </div>
+                   <h3 className="text-2xl font-black mb-2">Независимый</h3>
+                   <p className="text-muted-foreground">Для провайдеров без интеграции</p>
+                 </div>
+                 <div className="text-center mb-8">
+                   <div className="text-6xl font-black">500₽</div>
+                   <div className="text-muted-foreground">в месяц</div>
+                 </div>
+                 <ul className="space-y-4 mb-8">
+                   {[
+                     'Полный функционал Anti Abuse',
+                     'Неограниченные синхронизации',
+                     'Email и Telegram уведомления',
+                     'Стандартная поддержка',
+                     'Доступ к общей базе нарушителей',
+                   ].map((item) => (
+                     <li key={item} className="flex items-center gap-3">
+                       <CheckCircle2 className="w-5 h-5 text-muted-foreground shrink-0" />
+                       <span>{item}</span>
+                     </li>
+                   ))}
+                 </ul>
+                 <Button 
+                   onClick={scrollToForm}
+                   variant="outline"
+                   className="w-full h-14 text-lg font-bold rounded-xl"
+                 >
+                   Подключить
+                   <ArrowRight className="w-5 h-5 ml-2" />
+                 </Button>
+               </div>
+             </motion.div>
+           </motion.div>
+
+           <motion.p
+             className="text-center text-muted-foreground mt-8"
+             initial={{ opacity: 0 }}
+             whileInView={{ opacity: 1 }}
+             viewport={{ once: true }}
+           >
+             Станьте партнёром Plooza и получите Anti Abuse бесплатно навсегда
+           </motion.p>
+         </div>
+       </section>
+
        {/* How it Works - Two Modes */}
        <section className="py-24 md:py-32 bg-background">
          <div className="container px-6">
@@ -581,8 +681,8 @@
           >
             * Бесплатно для партнёров Plooza • 500 ₽/мес для независимых провайдеров
           </motion.p>
-         </div>
-       </section>
+          </div>
+        </section>
  
        <Footer />
      </div>
