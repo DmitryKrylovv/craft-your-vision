@@ -153,7 +153,7 @@ const productCategories: ProductCategory[] = [
         href: '/dedicated',
       },
       {
-        title: 'Колокация',
+       title: 'Colocation',
         description: 'Размещение вашего оборудования в ЦОД',
         icon: Server,
         href: '/colocation',
