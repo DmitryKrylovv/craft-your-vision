@@ -79,11 +79,6 @@
                
                {/* Left - Text */}
                <div>
-                 <div className="inline-flex items-center gap-0.5 mb-5">
-                   <img src={ploozaLogo} alt="Plooza" className="h-5 w-auto" />
-                   <span className="text-lg font-bold text-primary">.Pay</span>
-                 </div>
-                 
                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
                    Зарабатывай на том,<br />
                    <span className="text-primary">что и так покупаешь</span>
@@ -129,9 +124,9 @@
                        <Wallet className="w-5 h-5 text-primary" />
                      </div>
                      <div>
-                       <div className="flex items-center gap-0.5">
-                         <img src={ploozaLogo} alt="Plooza" className="h-4 w-auto" />
-                         <span className="font-bold text-primary">.Pay</span>
+                        <div className="flex items-center">
+                          <span className="font-semibold text-foreground">Plooza</span>
+                          <span className="font-bold text-primary">.Pay</span>
                        </div>
                        <div className="text-xs text-muted-foreground">Ваш кошелёк</div>
                      </div>
@@ -144,7 +139,6 @@
                        <span className="text-4xl font-bold text-foreground">12 450</span>
                        <span className="text-lg font-semibold text-primary">PLZ</span>
                      </div>
-                     <div className="text-xs text-muted-foreground mt-1">≈ 12 450 ₽</div>
                    </div>
  
                    {/* Recent Transactions */}
