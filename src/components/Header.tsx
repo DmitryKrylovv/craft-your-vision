@@ -43,6 +43,7 @@ const Header = () => {
                 <Link to="/for-providers" className="hover:opacity-80 transition-opacity">Для провайдеров</Link>
                 <Link to="/smart-hands/careers" className="hover:opacity-80 transition-opacity">Для инженеров</Link>
                 <Link to="/blog" className="hover:opacity-80 transition-opacity">Блог</Link>
+                <Link to="/pay" className="hover:opacity-80 transition-opacity">Pay</Link>
                 <Link to="/help" className="hover:opacity-80 transition-opacity">Помощь</Link>
                 <a href="tel:+78001234567" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity font-medium">
                   <Phone className="w-3 h-3" />
@@ -254,6 +255,9 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
           </a>
           <Link to="/blog" className="block px-3 py-2.5 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors" onClick={onClose}>
             Блог
+          </Link>
+          <Link to="/pay" className="block px-3 py-2.5 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors" onClick={onClose}>
+            Pay
           </Link>
           <Link to="/smart-hands/careers" className="block px-3 py-2.5 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors" onClick={onClose}>
             Для инженеров
