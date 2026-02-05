@@ -124,9 +124,9 @@
                        <Wallet className="w-5 h-5 text-primary" />
                      </div>
                      <div>
-                        <div className="flex items-center">
-                          <span className="font-semibold text-foreground">Plooza</span>
-                          <span className="font-bold text-primary">.Pay</span>
+                        <div className="flex items-center gap-0.5">
+                          <img src={ploozaLogo} alt="Plooza" className="h-4 w-auto" />
+                          <span className="text-base font-bold text-primary">.Pay</span>
                        </div>
                        <div className="text-xs text-muted-foreground">Ваш кошелёк</div>
                      </div>
