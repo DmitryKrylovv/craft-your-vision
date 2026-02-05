@@ -139,7 +139,7 @@
                    
                    {/* Balance */}
                    <div className="mb-6">
-                     <div className="text-sm text-muted-foreground mb-1">Баланс PLZ</div>
+                      <div className="text-sm text-muted-foreground mb-1">Баланс</div>
                      <div className="flex items-baseline gap-2">
                        <span className="text-4xl font-bold text-foreground">12 450</span>
                        <span className="text-lg font-semibold text-primary">PLZ</span>
@@ -203,7 +203,7 @@
            <div className="container">
              <div className="text-center mb-12">
                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-                 Зачем нужен <span className="text-primary">PLZ</span>
+                  Зачем нужны <span className="text-primary">PLZ</span>
                </h2>
                <p className="text-muted-foreground max-w-lg mx-auto">
                  Внутренняя валюта Plooza для кэшбэка и оплаты
@@ -262,7 +262,7 @@
                  </div>
                  
                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                   Покупай напрямую —<br /><span className="text-primary">PLZ всё равно твой</span>
+                    Покупай напрямую —<br /><span className="text-primary">PLZ всё равно твои</span>
                  </h2>
                  
                  <p className="text-muted-foreground mb-6">
@@ -308,6 +308,71 @@
            </div>
          </section>
  
+          {/* Spend Bonuses Section */}
+          <section className="py-12 md:py-20">
+            <div className="container">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="bg-card border border-border rounded-2xl p-6 shadow-sm order-2 lg:order-1">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-4 bg-muted rounded-xl">
+                      <div>
+                        <div className="text-sm text-muted-foreground">К оплате</div>
+                        <div className="text-xl font-bold text-foreground">4 500 ₽</div>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-muted-foreground" />
+                      <div className="text-right">
+                        <div className="text-sm text-muted-foreground">Списать PLZ</div>
+                        <div className="text-xl font-bold text-primary">−2 000 PLZ</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between p-4 bg-primary/10 rounded-xl">
+                      <div className="text-sm font-medium text-foreground">Итого к оплате</div>
+                      <div className="text-xl font-bold text-primary">2 500 ₽</div>
+                    </div>
+                    <p className="text-xs text-muted-foreground text-center">
+                      Пример оплаты VDS у провайдера с поддержкой Plooza Pay
+                    </p>
+                  </div>
+                </div>
+
+                <div className="order-1 lg:order-2">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium mb-5">
+                    <CreditCard className="w-4 h-4" />
+                    Трать бонусы
+                  </div>
+                  
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    Оплачивай услуги<br /><span className="text-primary">бонусами PLZ</span>
+                  </h2>
+                  
+                  <p className="text-muted-foreground mb-6">
+                    Накопленные бонусы можно тратить на оплату услуг у провайдеров, 
+                    которые подключены к Plooza Pay. Экономь на хостинге и серверах.
+                  </p>
+                  
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      'Частичная или полная оплата услуг',
+                      'Мгновенное списание при оплате',
+                      'Без комиссий и скрытых условий',
+                      'Бонусы не сгорают',
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                        <span className="text-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Button className="rounded-xl">
+                    Смотреть провайдеров
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+
          {/* CTA */}
          <section className="bg-primary py-12 md:py-16">
            <div className="container text-center">
@@ -322,10 +387,6 @@
                <ArrowRight className="w-4 h-4 ml-2" />
              </Button>
              <div className="flex flex-wrap justify-center gap-6 mt-6 text-primary-foreground/70 text-sm">
-               <div className="flex items-center gap-2">
-                 <CheckCircle2 className="w-4 h-4" />
-                 <span>1 PLZ = 1 ₽</span>
-               </div>
                <div className="flex items-center gap-2">
                  <CheckCircle2 className="w-4 h-4" />
                  <span>Оплата услуг</span>
