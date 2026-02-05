@@ -47,8 +47,8 @@
    const howItWorks = [
      {
        step: '01',
-       title: 'Создай кошелёк',
-       description: 'Бесплатная регистрация за минуту'
+       title: 'Войди в кабинет',
+       description: 'Кошелёк уже встроен в личный кабинет'
      },
      {
        step: '02',
@@ -94,10 +94,12 @@
                  </p>
                  
                  <div className="flex flex-wrap gap-3 mb-8">
-                   <Button size="lg" className="rounded-xl">
-                     Создать кошелёк
+                   <Button size="lg" className="rounded-xl" asChild>
+                     <a href="/dashboard">
+                     Перейти в кабинет
                      <ArrowRight className="w-4 h-4 ml-2" />
-                   </Button>
+                     </a>
+                    </Button>
                    <Button size="lg" variant="outline" className="rounded-xl">
                      Как это работает
                    </Button>
