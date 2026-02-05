@@ -18,7 +18,8 @@ import {
   Building2,
   Wallet,
   Users,
-  ShieldCheck
+  ShieldCheck,
+  Layers
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -65,7 +66,7 @@ const productCategories: ProductCategory[] = [
   {
     id: 'vps',
     label: 'VDS',
-    icon: Cloud,
+    icon: Layers,
     items: [
       {
         title: 'VPS на SSD',
