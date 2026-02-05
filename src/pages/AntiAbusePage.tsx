@@ -231,9 +231,9 @@
            >
              {/* Free Plan */}
              <motion.div variants={scaleIn}>
-               <div className="relative bg-background text-foreground p-8 md:p-10 border-2 border-primary rounded-2xl h-full">
+                <div className="relative bg-background text-foreground p-8 md:p-10 border-2 border-destructive rounded-2xl h-full">
                  <div className="absolute -top-4 left-8">
-                   <span className="bg-primary text-primary-foreground px-4 py-2 text-sm font-black uppercase tracking-wide">
+                    <span className="bg-destructive text-destructive-foreground px-4 py-2 text-sm font-black uppercase tracking-wide">
                      Рекомендуем
                    </span>
                  </div>
@@ -242,7 +242,7 @@
                    <p className="text-muted-foreground">Для провайдеров, интегрированных с маркетплейсом</p>
                  </div>
                  <div className="mb-8">
-                   <div className="text-7xl font-black text-primary">0₽</div>
+                    <div className="text-7xl font-black text-destructive">0₽</div>
                    <div className="text-muted-foreground text-lg">навсегда бесплатно</div>
                  </div>
                  <ul className="space-y-3 mb-8">
@@ -254,14 +254,14 @@
                      'Доступ к общей базе нарушителей',
                    ].map((item) => (
                      <li key={item} className="flex items-center gap-3">
-                       <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-destructive shrink-0" />
                        <span>{item}</span>
                      </li>
                    ))}
                  </ul>
                  <Button 
                    onClick={scrollToForm}
-                   className="w-full h-14 text-lg font-black rounded-xl uppercase tracking-wide"
+                    className="w-full h-14 text-lg font-black rounded-xl uppercase tracking-wide bg-destructive text-destructive-foreground hover:bg-destructive/90"
                  >
                    Стать партнёром
                    <ArrowRight className="w-5 h-5 ml-2" />
