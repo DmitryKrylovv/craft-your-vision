@@ -382,12 +382,14 @@
                Начни экономить уже сегодня
              </h2>
              <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">
-               Создай кошелёк и получи приветственный бонус 500 PLZ
+               Кошелёк уже встроен в личный кабинет — получи приветственный бонус 500 PLZ
              </p>
-             <Button size="lg" variant="secondary" className="rounded-xl">
-               Создать кошелёк бесплатно
+             <Button size="lg" variant="secondary" className="rounded-xl" asChild>
+               <a href="/dashboard">
+               Перейти в кабинет
                <ArrowRight className="w-4 h-4 ml-2" />
-             </Button>
+               </a>
+              </Button>
              <div className="flex flex-wrap justify-center gap-6 mt-6 text-primary-foreground/70 text-sm">
                <div className="flex items-center gap-2">
                  <CheckCircle2 className="w-4 h-4" />
