@@ -14,7 +14,11 @@ import {
   Lock,
   Network,
   Boxes,
-  MonitorSmartphone
+  MonitorSmartphone,
+  Building2,
+  Wallet,
+  Users,
+  ShieldCheck
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -60,7 +64,7 @@ const productCategories: ProductCategory[] = [
   },
   {
     id: 'vps',
-    label: 'Облачные VPS',
+    label: 'VDS',
     icon: Cloud,
     items: [
       {
@@ -136,9 +140,9 @@ const productCategories: ProductCategory[] = [
     ],
   },
   {
-    id: 'dedicated',
-    label: 'Сервисы и услуги',
-    icon: Database,
+    id: 'datacenter',
+    label: 'ЦОД и инфраструктура',
+    icon: Building2,
     items: [
       {
         title: 'Выделенные серверы',
@@ -152,6 +156,13 @@ const productCategories: ProductCategory[] = [
         icon: Server,
         href: '/colocation',
       },
+    ],
+  },
+  {
+    id: 'cloud',
+    label: 'Облако',
+    icon: Cloud,
+    items: [
       {
         title: 'Облачные сервисы',
         description: 'Гибкие облачные решения для бизнеса',
@@ -159,10 +170,43 @@ const productCategories: ProductCategory[] = [
         href: '/cloud',
       },
       {
+        title: 'GPU-серверы',
+        description: 'Серверы с мощными видеокартами для AI/ML',
+        icon: Cpu,
+        href: '/gpu',
+      },
+    ],
+  },
+  {
+    id: 'network',
+    label: 'Сетевые услуги',
+    icon: ShieldCheck,
+    items: [
+      {
         title: 'Защита от DDoS',
         description: 'Надежная защита от атак любой сложности',
         icon: Shield,
         href: '/dedicated',
+      },
+    ],
+  },
+  {
+    id: 'services',
+    label: 'Сервисы',
+    icon: Boxes,
+    items: [
+      {
+        title: 'Plooza Pay',
+        description: 'Кэшбэк и бонусы за покупку услуг',
+        icon: Wallet,
+        href: '/pay',
+        badge: 'Новинка',
+      },
+      {
+        title: 'Jobs',
+        description: 'Фриланс-платформа для IT-специалистов',
+        icon: Users,
+        href: '/freelance',
       },
     ],
   },
