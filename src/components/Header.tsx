@@ -39,11 +39,9 @@ const Header = () => {
                 </button>
               </div>
               <div className="hidden sm:flex items-center gap-6">
-                <Link to="/freelance" className="hover:opacity-80 transition-opacity">Jobs</Link>
                 <Link to="/for-providers" className="hover:opacity-80 transition-opacity">Для провайдеров</Link>
                 <Link to="/smart-hands/careers" className="hover:opacity-80 transition-opacity">Для инженеров</Link>
                 <Link to="/blog" className="hover:opacity-80 transition-opacity">Блог</Link>
-                <Link to="/pay" className="hover:opacity-80 transition-opacity">Pay</Link>
                 <Link to="/help" className="hover:opacity-80 transition-opacity">Помощь</Link>
                 <a href="tel:+78001234567" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity font-medium">
                   <Phone className="w-3 h-3" />
