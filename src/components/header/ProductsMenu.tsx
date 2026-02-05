@@ -19,7 +19,8 @@ import {
   Wallet,
   Users,
   ShieldCheck,
-  Layers
+  Layers,
+  Wrench
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -209,6 +210,12 @@ const productCategories: ProductCategory[] = [
         icon: Users,
         href: '/freelance',
       },
+     {
+       title: 'Plooza Smart Hands',
+       description: 'Услуги инженеров в дата-центрах',
+       icon: Wrench,
+       href: '/smart-hands',
+     },
     ],
   },
 ];
