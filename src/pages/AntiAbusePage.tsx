@@ -156,6 +156,19 @@
                  <span>BILLmanager & WHMCS</span>
                </div>
              </motion.div>
+
+            {/* Free badge */}
+            <motion.div
+              className="mt-12 inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-background/10 backdrop-blur-sm border border-background/20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.1 }}
+            >
+              <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+              <span className="text-background font-medium">
+                Полностью бесплатно для провайдеров, интегрированных с Plooza
+              </span>
+            </motion.div>
            </div>
  
            {/* Stats block - right side */}
@@ -542,7 +555,7 @@
                { label: 'Техподдержка 24/7' },
                { label: 'Простая установка' },
              ].map((item) => (
-               <motion.div 
+              <motion.div
                  key={item.label} 
                  variants={scaleIn}
                  className="flex items-center gap-3"
@@ -552,6 +565,15 @@
                </motion.div>
              ))}
            </motion.div>
+          
+          <motion.p 
+            className="text-center mt-8 text-destructive-foreground/70"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            * Сервис полностью бесплатный для всех провайдеров, интегрированных с маркетплейсом Plooza
+          </motion.p>
          </div>
        </section>
  
