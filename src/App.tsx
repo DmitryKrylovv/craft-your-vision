@@ -39,6 +39,8 @@ import FreelanceResumePage from "./pages/FreelanceResumePage";
 import GPUPage from "./pages/GPUPage";
  import AntiAbusePage from "./pages/AntiAbusePage";
  import PloozaPayPage from "./pages/PloozaPayPage";
+import MigrationPage from "./pages/MigrationPage";
+import ResellerPage from "./pages/ResellerPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -77,6 +79,8 @@ const App = () => (
                <Route path="/anti-abuse" element={<AntiAbusePage />} />
                <Route path="/pay" element={<PloozaPayPage />} />
               <Route path="/colocation" element={<ColocationPage />} />
+              <Route path="/migration" element={<MigrationPage />} />
+              <Route path="/reseller" element={<ResellerPage />} />
               <Route path="/providers" element={<ProvidersRatingPage />} />
               <Route path="/for-providers" element={<ForProvidersPage />} />
               <Route path="/blog" element={<BlogPage />} />
