@@ -19,6 +19,7 @@ import ProvidersRatingPage from "./pages/ProvidersRatingPage";
 import ForProvidersPage from "./pages/ForProvidersPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import BlogEditorPage from "./pages/BlogEditorPage";
 import BlogProfilePage from "./pages/BlogProfilePage";
 import HelpPage from "./pages/HelpPage";
 import DashboardPage from "./pages/DashboardPage";
@@ -86,6 +87,7 @@ const App = () => (
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/post/:postId" element={<BlogPostPage />} />
               <Route path="/blog/profile/:username" element={<BlogProfilePage />} />
+              <Route path="/blog/editor" element={<BlogEditorPage />} />
               <Route path="/help" element={<HelpPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/dashboard/order" element={<OrderPage />} />
