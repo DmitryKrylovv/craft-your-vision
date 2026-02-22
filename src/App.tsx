@@ -37,6 +37,7 @@ import FreelanceSpecialistsPage from "./pages/FreelanceSpecialistsPage";
 import FreelanceCreateResumePage from "./pages/FreelanceCreateResumePage";
 import FreelanceVacancyPage from "./pages/FreelanceVacancyPage";
 import FreelanceResumePage from "./pages/FreelanceResumePage";
+import FreelanceCompanyPage from "./pages/FreelanceCompanyPage";
 import GPUPage from "./pages/GPUPage";
  import AntiAbusePage from "./pages/AntiAbusePage";
  import PloozaPayPage from "./pages/PloozaPayPage";
@@ -115,6 +116,7 @@ const App = () => (
               <Route path="/freelance/create-resume" element={<FreelanceCreateResumePage />} />
               <Route path="/freelance/vacancy/:vacancyId" element={<FreelanceVacancyPage />} />
               <Route path="/freelance/resume/:resumeId" element={<FreelanceResumePage />} />
+              <Route path="/freelance/company/:companyId" element={<FreelanceCompanyPage />} />
                
               {/* Admin Panel Routes */}
               <Route path="/admin" element={<AdminLayout />}>
