@@ -45,6 +45,14 @@ import ResellerPage from "./pages/ResellerPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
+// Admin Panel
+import AdminLayout from "./components/admin/AdminLayout";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminUsers from "./pages/admin/AdminUsers";
+import AdminContent from "./pages/admin/AdminContent";
+import AdminProviders from "./pages/admin/AdminProviders";
+import AdminSettings from "./pages/admin/AdminSettings";
+
 // Provider Panel
 import ProviderLayout from "./components/provider/ProviderLayout";
 import ProviderDashboard from "./pages/provider/ProviderDashboard";
@@ -107,7 +115,16 @@ const App = () => (
               <Route path="/freelance/create-resume" element={<FreelanceCreateResumePage />} />
               <Route path="/freelance/vacancy/:vacancyId" element={<FreelanceVacancyPage />} />
               <Route path="/freelance/resume/:resumeId" element={<FreelanceResumePage />} />
-              
+               
+              {/* Admin Panel Routes */}
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminDashboard />} />
+                <Route path="users" element={<AdminUsers />} />
+                <Route path="content" element={<AdminContent />} />
+                <Route path="providers" element={<AdminProviders />} />
+                <Route path="settings" element={<AdminSettings />} />
+              </Route>
+
               {/* Provider Panel Routes */}
               <Route path="/provider-panel" element={<ProviderLayout />}>
                 <Route index element={<ProviderDashboard />} />
