@@ -51,6 +51,7 @@ const ProviderSidebar = () => {
     { path: '/provider-panel/stats', icon: BarChart3, label: 'Статистика', show: permissions.canViewStats },
     { path: '/provider-panel/team', icon: Users, label: 'Команда', show: permissions.canManageTeam },
     { path: '/provider-panel/settings', icon: Settings, label: 'Настройки', show: true },
+    { path: '/provider-panel/pro', icon: Crown, label: 'Plooza Pro', show: true },
   ];
 
   return (

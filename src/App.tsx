@@ -64,6 +64,7 @@ import ProviderReviews from "./pages/provider/ProviderReviews";
 import ProviderStats from "./pages/provider/ProviderStats";
 import ProviderTeam from "./pages/provider/ProviderTeam";
 import ProviderSettings from "./pages/provider/ProviderSettings";
+import ProviderProPage from "./pages/provider/ProviderProPage";
 
 const queryClient = new QueryClient();
 
@@ -137,6 +138,7 @@ const App = () => (
                 <Route path="stats" element={<ProviderStats />} />
                 <Route path="team" element={<ProviderTeam />} />
                 <Route path="settings" element={<ProviderSettings />} />
+                <Route path="pro" element={<ProviderProPage />} />
               </Route>
 
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
