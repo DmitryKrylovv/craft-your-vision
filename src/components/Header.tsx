@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, Search, Phone, MapPin, ChevronDown, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -14,6 +15,7 @@ import AuthModal from '@/components/header/AuthModal';
 import ploozaLogo from '@/assets/plooza-logo.svg';
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -70,7 +72,7 @@ const Header = () => {
 
               {/* Search Button - Desktop & Tablet */}
               <button
-                onClick={() => setIsSearchOpen(true)}
+                onClick={() => navigate('/search')}
                 className="hidden md:flex items-center gap-2 lg:gap-3 flex-1 max-w-[180px] lg:max-w-xs xl:max-w-md px-4 py-3 bg-muted rounded-xl text-sm text-muted-foreground hover:bg-muted/80 transition-colors"
               >
                 <Search className="w-4 h-4 flex-shrink-0" />
@@ -108,7 +110,7 @@ const Header = () => {
               {/* Mobile Actions */}
               <div className="flex md:hidden items-center gap-2 ml-auto">
                 <button
-                  onClick={() => setIsSearchOpen(true)}
+                  onClick={() => navigate('/search')}
                   className="p-2.5 hover:bg-muted rounded-lg transition-colors"
                 >
                   <Search className="w-5 h-5" />
