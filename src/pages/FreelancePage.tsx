@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Users, Briefcase, Star, ArrowRight, Building2, FileText, TrendingUp, Clock, MapPin, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,8 +7,10 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import FreelanceHeader from '@/components/freelance/FreelanceHeader';
 import FreelanceFooter from '@/components/freelance/FreelanceFooter';
+import FreelanceSearch from '@/components/freelance/FreelanceSearch';
 
 const FreelancePage = () => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const featuredVacancies = [
     {
       id: 1,
@@ -135,17 +138,19 @@ const FreelancePage = () => {
               DevOps, техподдержка, DBA и другие IT-специалисты.
             </p>
 
-            {/* Search Bar */}
-            <div className="bg-white rounded-2xl p-2 shadow-xl max-w-2xl mx-auto">
+            {/* Search Bar - triggers popup */}
+            <div
+              className="bg-white rounded-2xl p-2 shadow-xl max-w-2xl mx-auto cursor-pointer"
+              onClick={() => setIsSearchOpen(true)}
+            >
               <div className="flex flex-col sm:flex-row gap-2">
                 <div className="relative flex-1">
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <Input
-                    placeholder="Должность, навыки или компания..."
-                    className="pl-12 h-12 border-0 bg-transparent focus-visible:ring-0"
-                  />
+                  <div className="pl-12 h-12 flex items-center text-muted-foreground text-base select-none">
+                    Должность, навыки или компания...
+                  </div>
                 </div>
-                <Button size="lg" className="h-12 px-8">
+                <Button size="lg" className="h-12 px-8 pointer-events-none">
                   Найти
                 </Button>
               </div>
@@ -462,6 +467,7 @@ const FreelancePage = () => {
       </section>
 
       <FreelanceFooter />
+      <FreelanceSearch isOpen={isSearchOpen} onOpenChange={setIsSearchOpen} />
     </div>
   );
 };
