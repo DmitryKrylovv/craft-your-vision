@@ -45,6 +45,7 @@ import GPUPage from "./pages/GPUPage";
 import MigrationPage from "./pages/MigrationPage";
 import ResellerPage from "./pages/ResellerPage";
 import SearchPage from "./pages/SearchPage";
+import AppsPage from "./pages/AppsPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -93,6 +94,7 @@ const App = () => (
                <Route path="/pay" element={<PloozaPayPage />} />
               <Route path="/colocation" element={<ColocationPage />} />
               <Route path="/search" element={<SearchPage />} />
+              <Route path="/apps" element={<AppsPage />} />
               <Route path="/migration" element={<MigrationPage />} />
               <Route path="/reseller" element={<ResellerPage />} />
               <Route path="/providers" element={<ProvidersRatingPage />} />
