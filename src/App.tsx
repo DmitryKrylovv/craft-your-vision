@@ -49,6 +49,7 @@ import AppsPage from "./pages/AppsPage";
 import DDoSPage from "./pages/DDoSPage";
 import BillingPage from "./pages/BillingPage";
 import BillingDemoPage from "./pages/BillingDemoPage";
+import BillingClientDemo from "./pages/BillingClientDemo";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -101,6 +102,7 @@ const App = () => (
               <Route path="/ddos-protection" element={<DDoSPage />} />
               <Route path="/billing" element={<BillingPage />} />
               <Route path="/billing/demo" element={<BillingDemoPage />} />
+              <Route path="/billing/client" element={<BillingClientDemo />} />
               <Route path="/migration" element={<MigrationPage />} />
               <Route path="/reseller" element={<ResellerPage />} />
               <Route path="/providers" element={<ProvidersRatingPage />} />
