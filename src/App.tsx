@@ -52,6 +52,7 @@ import BillingDemoPage from "./pages/BillingDemoPage";
 import BillingClientDemo from "./pages/BillingClientDemo";
 import BillingProviderDemo from "./pages/BillingProviderDemo";
 import PloozaSearchPage from "./pages/PloozaSearchPage";
+import PloozaSearchResultsPage from "./pages/PloozaSearchResultsPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
