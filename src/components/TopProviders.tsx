@@ -352,13 +352,7 @@ const DomainsSection = () => {
   );
 };
 
-const TopProviders = () => (
-  <div>
-    <HostingSection />
-    <CloudSection />
-    <DataCenterSection />
-    <DomainsSection />
-  </div>
-);
+export { HostingSection, CloudSection, DataCenterSection, DomainsSection };
 
+const TopProviders = () => null;
 export default TopProviders;
