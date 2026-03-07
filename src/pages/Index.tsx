@@ -1,10 +1,18 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Categories from '@/components/Categories';
-import { HostingSection, CloudSection, DataCenterSection, DomainsSection } from '@/components/TopProviders';
 import Benefits from '@/components/Benefits';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+
+const TestSection = () => (
+  <section className="py-24 bg-red-100">
+    <div className="container">
+      <h2 className="text-4xl font-bold">TEST SECTION</h2>
+      <p>If you can see this, sections work.</p>
+    </div>
+  </section>
+);
 
 const Index = () => {
   return (
@@ -13,10 +21,7 @@ const Index = () => {
       <main className="flex-1">
         <Hero />
         <Categories />
-        <HostingSection />
-        <CloudSection />
-        <DataCenterSection />
-        <DomainsSection />
+        <TestSection />
         <Benefits />
         <CTA />
       </main>
