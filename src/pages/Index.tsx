@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Categories from '@/components/Categories';
 import TopProviders from '@/components/TopProviders';
-import Comparison from '@/components/Comparison';
+
 import Benefits from '@/components/Benefits';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -15,7 +15,7 @@ const Index = () => {
         <Hero />
         <Categories />
         <TopProviders />
-        <Comparison />
+        
         <Benefits />
         <CTA />
       </main>
