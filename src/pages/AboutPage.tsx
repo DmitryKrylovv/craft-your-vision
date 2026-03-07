@@ -69,11 +69,64 @@ const AboutPage = () => {
 
         {/* ─── Hero ─── */}
         <section className="relative bg-foreground overflow-hidden">
+          {/* Dot grid */}
           <div className="absolute inset-0 opacity-[0.04]" style={{
             backgroundImage: 'radial-gradient(hsl(var(--background)) 1px, transparent 1px)',
             backgroundSize: '24px 24px'
           }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-primary/8 rounded-full blur-[150px]" />
+
+          {/* Animated glowing orbs */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-primary/10 rounded-full blur-[150px]"
+            animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <motion.div
+            className="absolute top-[30%] left-[20%] w-[300px] h-[300px] bg-primary/5 rounded-full blur-[120px]"
+            animate={{ x: [0, 40, 0], y: [0, -30, 0], scale: [1, 1.2, 1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <motion.div
+            className="absolute bottom-[20%] right-[15%] w-[250px] h-[250px] bg-primary/5 rounded-full blur-[100px]"
+            animate={{ x: [0, -30, 0], y: [0, 20, 0], scale: [1, 1.15, 1] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          />
+
+          {/* Floating particles */}
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 rounded-full bg-primary/30"
+              style={{
+                top: `${20 + i * 12}%`,
+                left: `${10 + i * 15}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                x: [0, i % 2 === 0 ? 15 : -15, 0],
+                opacity: [0.3, 0.8, 0.3],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: 4 + i * 0.5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: i * 0.7,
+              }}
+            />
+          ))}
+
+          {/* Rotating ring */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] rounded-full border border-primary/[0.06]"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] rounded-full border border-primary/[0.04]"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          />
 
           <div className="container px-3 sm:px-4 relative z-10 py-20 sm:py-28 md:py-36">
             <div className="max-w-4xl mx-auto text-center">
@@ -81,9 +134,9 @@ const AboutPage = () => {
                 src={ploozaLogo}
                 alt="Plooza"
                 className="h-12 sm:h-14 md:h-16 mx-auto mb-6 brightness-0 invert"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.7, type: 'spring', bounce: 0.4 }}
               />
               <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={1}>
                 <Badge variant="outline" className="border-primary/30 text-primary bg-primary/10 mb-5">
