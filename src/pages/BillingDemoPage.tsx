@@ -93,7 +93,7 @@ const BillingDemoPage = () => {
           </div>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm">Войти</Button>
-            <Button size="sm" style={{ background: provider.primaryColor }}>Регистрация</Button>
+            <Button size="sm" className="text-white" style={{ background: provider.primaryColor }}>Регистрация</Button>
           </div>
         </div>
       </nav>
@@ -204,9 +204,9 @@ const BillingDemoPage = () => {
                         <span className="text-sm text-muted-foreground">/мес</span>
                       </div>
                       <Button
-                        className="w-full text-white"
+                        className={`w-full ${plan.popular ? 'text-white' : ''}`}
                         variant={plan.popular ? 'default' : 'outline'}
-                        style={plan.popular ? { background: provider.primaryColor } : {}}
+                        style={plan.popular ? { background: provider.primaryColor } : { borderColor: `${provider.primaryColor}40`, color: provider.primaryColor }}
                       >
                         Заказать
                       </Button>
@@ -242,7 +242,7 @@ const BillingDemoPage = () => {
                         <span className="text-2xl sm:text-3xl font-bold text-foreground">{plan.price.toLocaleString()}₽</span>
                         <span className="text-sm text-muted-foreground">/мес</span>
                       </div>
-                      <Button className="w-full" variant="outline">Заказать</Button>
+                      <Button className="w-full" variant="outline" style={{ borderColor: `${provider.primaryColor}40`, color: provider.primaryColor }}>Заказать</Button>
                     </motion.div>
                   ))}
                 </div>
