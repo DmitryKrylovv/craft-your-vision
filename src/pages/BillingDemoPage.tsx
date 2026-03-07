@@ -176,7 +176,7 @@ const BillingDemoPage = () => {
                       className={`relative rounded-2xl p-5 sm:p-6 transition-all ${
                         plan.popular ? 'border-2 ring-2 bg-card' : 'border border-border bg-card'
                       }`}
-                      style={plan.popular ? { borderColor: `${provider.primaryColor}40`, ringColor: `${provider.primaryColor}15` } : {}}
+                      style={plan.popular ? { borderColor: `${provider.primaryColor}40` } : {}}
                       initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
                     >
                       {plan.popular && (
