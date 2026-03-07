@@ -353,12 +353,12 @@ const DomainsSection = () => {
 };
 
 const TopProviders = () => (
-  <>
+  <div>
     <HostingSection />
     <CloudSection />
     <DataCenterSection />
     <DomainsSection />
-  </>
+  </div>
 );
 
 export default TopProviders;
