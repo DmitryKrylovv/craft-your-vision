@@ -163,7 +163,7 @@ const AboutPage = () => {
                 className="text-base sm:text-lg md:text-xl text-background/60 max-w-2xl mx-auto mb-8"
                 initial="hidden" animate="visible" variants={fadeUp} custom={3}
               >
-                Plooza — независимый маркетплейс хостинг-провайдеров России и СНГ. 
+                Plooza — независимый маркетплейс хостинг-провайдеров со всего мира. 
                 Сравнивайте цены, читайте отзывы и находите идеальный сервер за минуты.
               </motion.p>
               <motion.div
@@ -173,7 +173,7 @@ const AboutPage = () => {
                 <Button size="lg" asChild>
                   <Link to="/vds">Подобрать сервер <ArrowRight className="w-5 h-5 ml-2" /></Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-background/20 text-background hover:bg-background/10" asChild>
+                <Button size="lg" className="bg-background/15 hover:bg-background/25 text-background border border-background/20 backdrop-blur-sm" asChild>
                   <Link to="/for-providers">Стать провайдером</Link>
                 </Button>
               </motion.div>
