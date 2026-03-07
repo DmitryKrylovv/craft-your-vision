@@ -242,7 +242,7 @@ const BillingDemoPage = () => {
                         <span className="text-2xl sm:text-3xl font-bold text-foreground">{plan.price.toLocaleString()}₽</span>
                         <span className="text-sm text-muted-foreground">/мес</span>
                       </div>
-                      <Button className="w-full" variant="outline">Заказать</Button>
+                      <Button className="w-full" variant="outline" style={{ borderColor: `${provider.primaryColor}40`, color: provider.primaryColor }}>Заказать</Button>
                     </motion.div>
                   ))}
                 </div>
