@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Search, TrendingUp, TrendingDown, Cloud, Sun, CloudRain, Wind, Droplets, ThermometerSun, Clock, Bookmark, History, Sparkles } from 'lucide-react';
+import { Search, TrendingUp, TrendingDown, Cloud, Sun, CloudRain, Wind, Droplets, ThermometerSun, Clock, Sparkles } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import ploozaLogo from '@/assets/plooza-logo.svg';
 
 const currencies = [
   { pair: 'USD/RUB', value: 88.45, change: +0.32, up: true },
@@ -29,23 +30,12 @@ const weatherData = {
   ],
 };
 
-const quickLinks = [
-  { label: 'VDS серверы', href: '/vds' },
-  { label: 'Хостинг', href: '/hosting' },
-  { label: 'Домены', href: '/domains' },
-  { label: 'Облачные', href: '/cloud' },
-  { label: 'Выделенные', href: '/dedicated' },
-  { label: 'SSL', href: '/ssl' },
-  { label: 'Провайдеры', href: '/providers' },
-  { label: 'Блог', href: '/blog' },
-];
-
 const trendingSearches = [
-  'Дешёвый VPS Россия',
-  'Хостинг с бесплатным SSL',
-  'Выделенный сервер GPU',
-  'Облачный хостинг сравнение',
-  'DDoS защита',
+  'Курс доллара сегодня',
+  'Погода на выходные',
+  'Новости технологий',
+  'Рецепты быстрого ужина',
+  'Фильмы 2026',
 ];
 
 const PloozaSearchPage = () => {
@@ -54,42 +44,24 @@ const PloozaSearchPage = () => {
 
   const handleSearch = () => {
     if (query.trim()) {
-      window.location.href = `/search?q=${encodeURIComponent(query)}`;
+      window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
     }
   };
 
   const WeatherIcon = weatherData.icon;
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-30">
-        <div className="container max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
-            <img src="/plooza-logo.svg" alt="Plooza" className="h-7" />
-          </a>
-          <div className="flex items-center gap-3">
-            <a href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Личный кабинет
-            </a>
-          </div>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Main Search Area */}
-      <main className="container max-w-3xl mx-auto px-4 pt-16 sm:pt-24 pb-8">
-        {/* Logo & Title */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-2">
-            Plooza <span className="text-primary">Поиск</span>
-          </h1>
-          <p className="text-muted-foreground text-sm sm:text-base">
-            Найди лучший хостинг, сервер или домен за секунды
-          </p>
+      <main className="flex-1 flex flex-col items-center justify-start container max-w-3xl mx-auto px-4 pt-20 sm:pt-32 pb-8">
+        {/* Logo */}
+        <div className="flex items-center gap-3 mb-8">
+          <img src={ploozaLogo} alt="Plooza" className="h-10 sm:h-12" />
+          <span className="text-2xl sm:text-3xl font-bold text-muted-foreground/60">Поиск</span>
         </div>
 
         {/* Search Bar */}
-        <div className="relative mb-6">
+        <div className="w-full relative mb-6">
           <div className={`relative flex items-center bg-card border rounded-2xl shadow-sm transition-all duration-200 ${focused ? 'border-primary ring-4 ring-primary/10 shadow-lg' : 'border-border'}`}>
             <Search className="absolute left-4 sm:left-5 w-5 h-5 text-muted-foreground" />
             <input
@@ -99,7 +71,7 @@ const PloozaSearchPage = () => {
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-              placeholder="Поиск серверов, хостинга, доменов, провайдеров..."
+              placeholder="Поиск в интернете..."
               className="w-full h-14 sm:h-16 pl-12 sm:pl-14 pr-28 sm:pr-36 bg-transparent text-base sm:text-lg placeholder:text-muted-foreground focus:outline-none rounded-2xl"
             />
             <Button
@@ -112,21 +84,8 @@ const PloozaSearchPage = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {quickLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="px-3 py-1.5 text-xs sm:text-sm font-medium text-muted-foreground bg-secondary rounded-lg hover:bg-primary/10 hover:text-primary transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-
         {/* Trending */}
-        <div className="mb-10">
+        <div className="w-full mb-10">
           <div className="flex items-center gap-2 text-sm font-semibold text-foreground mb-3">
             <Sparkles className="w-4 h-4 text-primary" />
             Популярные запросы
@@ -135,7 +94,7 @@ const PloozaSearchPage = () => {
             {trendingSearches.map((term) => (
               <button
                 key={term}
-                onClick={() => { setQuery(term); }}
+                onClick={() => setQuery(term)}
                 className="px-3 py-2 text-xs sm:text-sm bg-card border border-border rounded-xl hover:border-primary/40 hover:bg-primary/5 text-foreground transition-colors"
               >
                 {term}
@@ -145,7 +104,7 @@ const PloozaSearchPage = () => {
         </div>
 
         {/* Info Blocks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Currency Block */}
           <Card className="overflow-hidden">
             <CardContent className="p-4 sm:p-5">
@@ -154,7 +113,7 @@ const PloozaSearchPage = () => {
                 <h2 className="text-sm font-bold text-foreground">Курсы валют</h2>
                 <span className="ml-auto text-[10px] text-muted-foreground flex items-center gap-1">
                   <Clock className="w-3 h-3" />
-                  Обновлено 5 мин назад
+                  5 мин назад
                 </span>
               </div>
               <div className="space-y-2.5">
@@ -183,8 +142,6 @@ const PloozaSearchPage = () => {
                 <ThermometerSun className="w-4 h-4 text-primary" />
                 <h2 className="text-sm font-bold text-foreground">Погода — {weatherData.city}</h2>
               </div>
-
-              {/* Current */}
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
                   <WeatherIcon className="w-8 h-8 text-primary" />
@@ -206,8 +163,6 @@ const PloozaSearchPage = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Forecast */}
               <div className="flex gap-1">
                 {weatherData.forecast.map((day) => {
                   const DayIcon = day.icon;
