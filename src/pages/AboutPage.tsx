@@ -57,7 +57,7 @@ const ecosystem = [
   { name: 'Plooza Работа', desc: 'Платформа вакансий в IT-инфраструктуре', link: '/apps' },
   { name: 'Plooza Инженеры', desc: 'Удалённые руки в дата-центрах по всему миру', link: '/smart-hands' },
   { name: 'Plooza Защита', desc: 'Сервис синхронизации блокировок злоумышленников', link: '/anti-abuse' },
-  { name: 'Plooza Реселлер', desc: 'White-label маркетплейс для партнёров', link: '/reseller' },
+  { name: 'Plooza Реселлер', desc: 'Запустите собственный маркетплейс хостинга под своим брендом — white-label решение с готовым каталогом провайдеров и биллингом', link: '/reseller' },
   { name: 'Plooza Браузер', desc: 'Безопасный браузер для управления инфраструктурой', link: '/migration' },
 ];
 
