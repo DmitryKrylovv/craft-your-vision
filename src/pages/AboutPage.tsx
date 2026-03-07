@@ -287,38 +287,81 @@ const AboutPage = () => {
         </section>
 
         {/* ─── Timeline ─── */}
-        <section className="py-12 sm:py-16 md:py-24 bg-secondary/30">
-          <div className="container px-3 sm:px-4">
-            <motion.div className="text-center mb-10 sm:mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-3">Наша история</h2>
-              <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto">От хостинг-провайдера к маркетплейсу инфраструктуры</p>
+        <section className="py-12 sm:py-16 md:py-24 bg-foreground relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: 'linear-gradient(hsl(var(--background)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--background)) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }} />
+
+          <div className="container px-3 sm:px-4 relative z-10">
+            <motion.div className="text-center mb-12 sm:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <Badge variant="outline" className="border-primary/30 text-primary bg-primary/10 mb-4">История</Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-background tracking-tight mb-3">Наш путь</h2>
+              <p className="text-sm sm:text-lg text-background/50 max-w-2xl mx-auto">От хостинг-провайдера к глобальному маркетплейсу инфраструктуры</p>
             </motion.div>
 
-            <div className="max-w-3xl mx-auto relative">
-              {/* Vertical line */}
-              <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px bg-border" />
+            <div className="max-w-5xl mx-auto relative">
+              {/* Central line — desktop */}
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px">
+                <motion.div
+                  className="w-full h-full bg-gradient-to-b from-primary/0 via-primary/40 to-primary/0"
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: 'easeOut' }}
+                  style={{ transformOrigin: 'top' }}
+                />
+              </div>
+              {/* Mobile line */}
+              <div className="md:hidden absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0" />
 
-              <div className="space-y-8 sm:space-y-10">
-                {timeline.map((item, i) => (
-                  <motion.div
-                    key={item.year}
-                    className="relative flex gap-5 sm:gap-7"
-                    initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-                  >
-                    {/* Dot */}
-                    <div className="relative z-10 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <item.icon className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </div>
-
-                    <div className="pt-1 sm:pt-2">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-bold text-primary">{item.year}</span>
+              <div className="space-y-6 sm:space-y-8 md:space-y-0">
+                {timeline.map((item, i) => {
+                  const isLeft = i % 2 === 0;
+                  return (
+                    <motion.div
+                      key={item.year}
+                      className={`relative flex items-start gap-4 pl-12 md:pl-0 md:gap-0 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} md:mb-12 last:md:mb-0`}
+                      initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: '-50px' }}
+                      transition={{ duration: 0.6, delay: 0.1 }}
+                    >
+                      {/* Content card */}
+                      <div className={`flex-1 md:w-[calc(50%-2rem)] ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
+                        <div className="group bg-background/5 backdrop-blur-sm border border-background/10 rounded-2xl p-5 sm:p-6 hover:bg-background/10 hover:border-primary/20 transition-all duration-300">
+                          <div className={`flex items-center gap-3 mb-3 ${isLeft ? 'md:justify-end' : 'md:justify-start'}`}>
+                            <span className="text-2xl sm:text-3xl font-black text-primary tracking-tight">{item.year}</span>
+                            <div className="h-px flex-1 bg-primary/20 max-w-[60px]" />
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-bold text-background mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
+                          <p className="text-sm sm:text-base text-background/50 leading-relaxed">{item.desc}</p>
+                        </div>
                       </div>
-                      <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-1">{item.title}</h3>
-                      <p className="text-sm sm:text-base text-muted-foreground">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
+
+                      {/* Center node — desktop */}
+                      <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-6 z-10">
+                        <motion.div
+                          className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center shadow-lg shadow-primary/20 ring-4 ring-foreground"
+                          whileHover={{ scale: 1.15, rotate: 5 }}
+                          transition={{ type: 'spring', stiffness: 300 }}
+                        >
+                          <item.icon className="w-5 h-5" />
+                        </motion.div>
+                      </div>
+
+                      {/* Mobile node */}
+                      <div className="md:hidden absolute left-0 top-5 z-10">
+                        <div className="w-10 h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center shadow-md ring-2 ring-foreground">
+                          <item.icon className="w-4 h-4" />
+                        </div>
+                      </div>
+
+                      {/* Spacer for opposite side — desktop */}
+                      <div className="hidden md:block flex-1 md:w-[calc(50%-2rem)]" />
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </div>
