@@ -1,8 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Categories from '@/components/Categories';
-import TopProviders from '@/components/TopProviders';
-
+import { HostingSection, CloudSection, DataCenterSection, DomainsSection } from '@/components/TopProviders';
 import Benefits from '@/components/Benefits';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -14,8 +13,10 @@ const Index = () => {
       <main className="flex-1">
         <Hero />
         <Categories />
-        <TopProviders />
-        
+        <HostingSection />
+        <CloudSection />
+        <DataCenterSection />
+        <DomainsSection />
         <Benefits />
         <CTA />
       </main>
