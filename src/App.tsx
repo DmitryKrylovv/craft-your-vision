@@ -46,6 +46,7 @@ import MigrationPage from "./pages/MigrationPage";
 import ResellerPage from "./pages/ResellerPage";
 import SearchPage from "./pages/SearchPage";
 import AppsPage from "./pages/AppsPage";
+import DDoSPage from "./pages/DDoSPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
