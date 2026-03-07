@@ -93,39 +93,48 @@ const AboutPage = () => {
           />
 
           {/* Floating particles */}
-          {[...Array(6)].map((_, i) => (
+          {[...Array(14)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 rounded-full bg-primary/30"
+              className={`absolute rounded-full ${i % 3 === 0 ? 'w-1.5 h-1.5 bg-primary/40' : i % 3 === 1 ? 'w-1 h-1 bg-primary/25' : 'w-2 h-2 bg-primary/15'}`}
               style={{
-                top: `${20 + i * 12}%`,
-                left: `${10 + i * 15}%`,
+                top: `${8 + (i * 7) % 85}%`,
+                left: `${5 + (i * 11) % 90}%`,
               }}
               animate={{
-                y: [0, -30, 0],
-                x: [0, i % 2 === 0 ? 15 : -15, 0],
-                opacity: [0.3, 0.8, 0.3],
-                scale: [1, 1.5, 1],
+                y: [0, -40 - i * 5, 0],
+                x: [0, i % 2 === 0 ? 20 + i * 3 : -20 - i * 3, 0],
+                opacity: [0.2, 0.9, 0.2],
+                scale: [1, 1.8, 1],
               }}
               transition={{
-                duration: 4 + i * 0.5,
+                duration: 3 + i * 0.4,
                 repeat: Infinity,
                 ease: 'easeInOut',
-                delay: i * 0.7,
+                delay: i * 0.5,
               }}
             />
           ))}
 
-          {/* Rotating ring */}
+          {/* Rotating rings with orbiting dots */}
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] rounded-full border border-primary/[0.06]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] rounded-full border border-primary/[0.07]"
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-          />
+          >
+            <motion.div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary/40" />
+          </motion.div>
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] rounded-full border border-primary/[0.04]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] rounded-full border border-dashed border-primary/[0.05]"
             animate={{ rotate: -360 }}
             transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          >
+            <motion.div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary/30" />
+          </motion.div>
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full border border-primary/[0.03]"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
           />
 
           <div className="container px-3 sm:px-4 relative z-10 py-20 sm:py-28 md:py-36">
