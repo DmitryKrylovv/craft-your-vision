@@ -204,9 +204,9 @@ const BillingDemoPage = () => {
                         <span className="text-sm text-muted-foreground">/мес</span>
                       </div>
                       <Button
-                        className="w-full text-white"
+                        className={`w-full ${plan.popular ? 'text-white' : ''}`}
                         variant={plan.popular ? 'default' : 'outline'}
-                        style={plan.popular ? { background: provider.primaryColor } : {}}
+                        style={plan.popular ? { background: provider.primaryColor } : { borderColor: `${provider.primaryColor}40`, color: provider.primaryColor }}
                       >
                         Заказать
                       </Button>
