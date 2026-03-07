@@ -53,12 +53,12 @@ const timeline = [
 ];
 
 const ecosystem = [
-  { name: 'Plooza Pay', desc: 'Единый биллинг для оплаты услуг у разных провайдеров', link: '/pay' },
-  { name: 'Plooza Jobs', desc: 'Платформа вакансий в IT-инфраструктуре', link: '/apps' },
-  { name: 'Plooza Smart Hands', desc: 'Удалённые руки в дата-центрах по всей России', link: '/smart-hands' },
-  { name: 'Anti Abuse', desc: 'Сервис синхронизации блокировок злоумышленников', link: '/anti-abuse' },
-  { name: 'Реселлер', desc: 'White-label маркетплейс для партнёров', link: '/reseller' },
-  { name: 'Миграция', desc: 'Бесплатный перенос сайтов между провайдерами', link: '/migration' },
+  { name: 'Plooza Кошелёк', desc: 'Единый биллинг для оплаты услуг у разных провайдеров', link: '/pay' },
+  { name: 'Plooza Работа', desc: 'Платформа вакансий в IT-инфраструктуре', link: '/apps' },
+  { name: 'Plooza Инженеры', desc: 'Удалённые руки в дата-центрах по всему миру', link: '/smart-hands' },
+  { name: 'Plooza Защита', desc: 'Сервис синхронизации блокировок злоумышленников', link: '/anti-abuse' },
+  { name: 'Plooza Реселлер', desc: 'White-label маркетплейс для партнёров', link: '/reseller' },
+  { name: 'Plooza Браузер', desc: 'Безопасный браузер для управления инфраструктурой', link: '/migration' },
 ];
 
 const AboutPage = () => {
