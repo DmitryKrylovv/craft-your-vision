@@ -51,6 +51,7 @@ import BillingPage from "./pages/BillingPage";
 import BillingDemoPage from "./pages/BillingDemoPage";
 import BillingClientDemo from "./pages/BillingClientDemo";
 import BillingProviderDemo from "./pages/BillingProviderDemo";
+import PloozaSearchPage from "./pages/PloozaSearchPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -105,6 +106,7 @@ const App = () => (
               <Route path="/billing/demo" element={<BillingDemoPage />} />
               <Route path="/billing/client" element={<BillingClientDemo />} />
               <Route path="/billing/provider" element={<BillingProviderDemo />} />
+              <Route path="/plooza-search" element={<PloozaSearchPage />} />
               <Route path="/migration" element={<MigrationPage />} />
               <Route path="/reseller" element={<ResellerPage />} />
               <Route path="/providers" element={<ProvidersRatingPage />} />
