@@ -93,7 +93,7 @@ const BillingDemoPage = () => {
           </div>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm">Войти</Button>
-            <Button size="sm" style={{ background: provider.primaryColor }}>Регистрация</Button>
+            <Button size="sm" className="text-white" style={{ background: provider.primaryColor }}>Регистрация</Button>
           </div>
         </div>
       </nav>
