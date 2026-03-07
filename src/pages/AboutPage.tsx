@@ -48,7 +48,7 @@ const timeline = [
   { year: '2019', title: 'Основание', desc: 'Начинали как хостинг-провайдер — VPS и выделенные серверы.', icon: Rocket },
   { year: '2021', title: 'Свой ЛК', desc: 'Разработали собственное решение для управления услугами.', icon: Code },
   { year: '2024', title: 'Поворотный момент', desc: 'Закон о реестре хостеров — начали искать новые направления.', icon: Sparkles },
-  { year: '2025', title: 'Экосистема', desc: 'Запуск Plooza Pay, Plooza Jobs, Smart Hands и Anti Abuse.', icon: Building2 },
+  { year: '2025', title: 'Экосистема', desc: 'Запуск Plooza Кошелёк, Plooza Работа, Plooza Инженеры и Plooza Защита.', icon: Building2 },
   { year: '2026', title: 'Маркетплейс', desc: 'Трансформация в агрегатор — 150+ провайдеров на одной платформе.', icon: Globe },
 ];
 
